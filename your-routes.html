@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Routes</title>
+    <link rel="stylesheet" href="css\your-routes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Хедер вынесен из .container и растянут на всю ширину -->
+    <div class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.studio.png" alt="Logo">
+            </div>
+            <div class="nav">
+                <!-- Навигация может быть добавлена позже -->
+            </div>
+            <div class="profile-icon" id="profile-icon">
+                <div class="avatar-small"></div>
+                <span>Username</span>
+                <div class="profile-dropdown" id="profile-dropdown" style="display: none;">
+                    <a href="profile.html">Profile</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="#">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контейнер только для контента -->
+    <div class="container">
+        <!-- Основной контент -->
+        <div class="content">
+            <!-- Левая панель навигации -->
+            <div class="sidebar">
+                <a href="profile.html"><i class="fas fa-user"></i> Your profile</a>
+                <a href="create-route.html" class="create-route"><i class="fas fa-plus"></i> Create a route</a>
+                <a href="your-routes.html"><i class="fas fa-map-signs"></i> Your routes</a>
+                <a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a>
+                <a href="payments.html"><i class="fas fa-credit-card"></i> Payments and subscriptions</a>
+                <a href="login-security.html"><i class="fas fa-shield-alt"></i> Login and security</a>
+                <a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+                <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Log out</a>
+            </div>
+
+            <!-- Основная область -->
+            <div class="main-content">
+                <div class="top-panel">
+                    <div class="top-row">
+                        <h1>Your Routes</h1>
+                        <button class="create-btn"><i class="fas fa-plus"></i> Create Route</button>
+                    </div>
+                    <div class="stats">
+                        <span>Total Routes: <span id="total-routes">0</span></span>
+                        <span>Published: <span id="published-routes">0</span></span>
+                        <span>Moderation: <span id="moderation-routes">0</span></span>
+                        <span>Draft: <span id="draft-routes">0</span></span>
+                        <span class="earnings">Earnings: €<span id="earnings">0.00</span> <span class="tooltip">Based on views in March 2025</span></span>
+                    </div>
+                </div>
+                <div class="filters">
+                    <div class="search-bar">
+                        <input type="text" id="route-search" placeholder="Search by name or region">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-group">
+                        <select id="status-filter">
+                            <option value="">All Statuses</option>
+                            <option value="published">Published</option>
+                            <option value="moderation">Moderation</option>
+                            <option value="draft">Draft</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                        <select id="type-filter">
+                            <option value="">All Types</option>
+                            <option value="Пеший">Пеший</option>
+                            <option value="Велосипедный">Велосипедный</option>
+                            <option value="Автодом">Автодом</option>
+                        </select>
+                        <select id="region-filter">
+                            <option value="">All Regions</option>
+                            <option value="Lisbon">Lisbon</option>
+                            <option value="Porto">Porto</option>
+                        </select>
+                        <select id="sort">
+                            <option value="">Sort By</option>
+                            <option value="date-new">Date (Newest)</option>
+                            <option value="date-old">Date (Oldest)</option>
+                            <option value="popularity">Popularity</option>
+                            <option value="earnings">Earnings</option>
+                        </select>
+                        <button class="reset-btn">Reset</button>
+                    </div>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="cards"><i class="fas fa-th-large"></i></button>
+                    <button class="view-btn" data-view="table"><i class="fas fa-table"></i></button>
+                </div>
+                <div id="routes-list" class="routes-list cards"></div>
+                <div class="pagination">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="data.js"></script>
+    <script src="your-routes.js"></script>
+</body>
+</html>

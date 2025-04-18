@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Explorer - Europe</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/europe-specific.css">
+  <link rel="stylesheet" href="styles/filter-modal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="inner-container">
+      <div class="header-content">
+        <div class="logo">
+          <img src="logo.png" alt="Travel Logo">
+        </div>
+        
+        <div class="search-filter-block">
+          <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search destinations...">
+            <button class="search-button">
+              <span class="icon-search"></span>
+            </button>
+          </div>
+          
+          <div class="filter-button">
+            <span class="icon-filter"></span>
+            <span>Фильтры</span>
+          </div>
+        </div>
+        
+        <div class="user-section">
+          <button class="user-button" id="userButton">
+            <div class="hamburger-icon">
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+            </div>
+            <div class="user-avatar">
+              <!-- Red circle avatar placeholder -->
+            </div>
+          </button>
+          
+          <div class="user-menu" id="userMenu">
+            <div class="menu-item" href="profile.html">Profile</div>
+            <div class="menu-item">Login and security</div>
+            <div class="menu-item">Settings</div>
+            <div class="menu-divider"></div>
+            
+            <button class="create-route-btn">
+              <span class="icon-plus"></span>
+              <span>Create a route</span>
+            </button>
+            
+            <div class="menu-item">Your routes</div>
+            <div class="menu-item" href="analytics.html">Analytics</div>
+            <div class="menu-item">Payments</div>
+            <div class="menu-item" id="signOut">Sign out</div>
+            
+            <div class="social-links">
+              <div class="social-link"></div>
+              <div class="social-link"></div>
+              <div class="social-link"></div>
+              <div class="social-link"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation-wrapper">
+      <div class="inner-container">
+        <nav class="main-nav">
+          <a href="index.html" class="nav-item active">
+            <div class="icon-europe"></div>
+            <span>Europe</span>
+          </a>
+          <a href="scandinavia.html" class="nav-item">
+            <div class="icon-scandinavia"></div>
+            <span>Scandinavia</span>
+          </a>
+          <a href="seas-oceans.html" class="nav-item">
+            <div class="icon-seas"></div>
+            <span>Seas & Oceans</span>
+          </a>
+          <a href="asia.html" class="nav-item">
+            <div class="icon-asia"></div>
+            <span>Asia</span>
+          </a>
+          <a href="middle-east.html" class="nav-item">
+            <div class="icon-middle-east"></div>
+            <span>Middle East</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <div class="main-content">
+    <div class="inner-container">
+      <div class="cards-container">
+        <div class="cards-grid" id="cardsGrid">
+          <!-- Карточки будут сгенерированы JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="filterOverlay" class="filter-overlay">
+    <!-- Содержимое модального окна фильтров будет загружено через JavaScript -->
+  </div>
+  
+  <script src="scripts/user-menu.js"></script>
+  <script type="module" src="scripts/cards.js"></script>
+  <script src="scripts/filter-modal.js"></script>
+</body>
+</html>

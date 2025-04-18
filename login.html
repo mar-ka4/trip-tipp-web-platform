@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup - Travel Explorer</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="left-panel">
+            <div class="logo">
+                <img src="logo.png" alt="Travel Logo">
+              </div>
+            <div class="gradient-shape"></div>
+            <div class="welcome-text">
+                Welcome<br>TripTips
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="form-container">
+                <div class="form-toggle">
+                    <div class="toggle-button active" id="login-toggle">Login</div>
+                    <div class="toggle-button" id="signup-toggle">Signup</div>
+                </div>
+                
+                <div class="login-form" id="login-form">
+                    <h1>Login</h1>
+                    <p class="welcome-msg">Welcome back! Please login to your account.</p>
+                    
+                    <div class="form-group">
+                        <label for="login-username">User Name</label>
+                        <input type="text" id="login-username" placeholder="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                    </div>
+                    
+                    <div class="remember-forgot">
+                        <div class="remember-me">
+                            <div class="custom-checkbox"></div>
+                            <span>Remember Me</span>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    
+                    <button class="action-button" id="login-button">Login</button>
+                    <div class="error-message" id="login-error"></div>
+                </div>
+                
+                <div class="signup-form" id="signup-form">
+                    <h1>Signup</h1>
+                    <p class="welcome-msg">Create a new account to get started!</p>
+                    
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-username">User Name</label>
+                        <input type="text" id="signup-username" placeholder="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" placeholder="••••••••" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" placeholder="••••••••" required>
+                    </div>
+                    
+                    <div class="form-group secret-key-group">
+                        <label for="signup-secret-key">Secret Key <span class="optional-label">(optional)</span></label>
+                        <div class="secret-key-input-wrapper">
+                            <input type="text" id="signup-secret-key" placeholder="Enter secret key if you have one">
+                            <div class="key-tooltip">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip-text">A secret key grants you immediate access to create routes without verification</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="action-button" id="signup-button">Create Account</button>
+                    <div class="error-message" id="signup-error"></div>
+                    <div class="success-message" id="signup-success"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="scripts/login.js"></script>
+</body>
+</html>

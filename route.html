@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Explorer - Route Details</title>
+  <link rel="stylesheet" href="styles/route.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- Убедись, что main-styles.css содержит стили: .user-avatar, .user-menu, .sign-in-btn, .social-links -->
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="inner-container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="europe.html">
+            <img src="logo.png" alt="Travel Logo">
+          </a>
+        </div>
+        
+        <div class="search-filter-block">
+          <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search destinations...">
+            <button class="search-button">
+              <span class="icon-search">🔍</span>
+            </button>
+          </div>
+          
+          <div class="filter-button">
+            <span class="icon-filter"></span>
+            <span>Фильтры</span>
+          </div>
+        </div>
+        
+        <div class="user-section">
+          <button class="user-button" id="userButton">
+            <div class="hamburger-icon">
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+            </div>
+            <div class="user-avatar">
+              <!-- Red circle avatar placeholder -->
+            </div>
+          </button>
+          
+          <div class="user-menu" id="userMenu">
+            <!-- Динамически заполняется через user-menu.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main content -->
+  <div class="main-content">
+    <div class="inner-container">
+      <!-- Route Header -->
+      <div class="route-header">
+        <div class="route-title">
+          <h1 id="route-name"></h1>
+          <p class="location" id="route-location"></p>
+        </div>
+        <div class="creator-avatar">
+          <img src="img/pepe.jpg" alt="Creator Avatar">
+        </div>
+      </div>
+      
+      <!-- Route Gallery -->
+      <div class="route-gallery" id="route-gallery">
+        <!-- Динамически заполняется JavaScript -->
+      </div>
+      
+      <!-- Route Content -->
+      <div class="route-content">
+        <!-- Route Overview -->
+        <div class="route-overview">
+          <h2>Обзор</h2>
+          
+          <div class="overview-grid">
+            <div class="overview-item">
+              <div class="icon-container">
+                <span class="icon">🚶</span>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Тип маршрута</div>
+                <div class="item-value" id="route-type"></div>
+              </div>
+            </div>
+            
+            <div class="overview-item">
+              <div class="icon-container">
+                <span class="icon">📍</span>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Точек маршрута</div>
+                <div class="item-value" id="route-points"></div>
+              </div>
+            </div>
+            
+            <div class="overview-item">
+              <div class="icon-container">
+                <span class="icon">⏱️</span>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Время прохождения</div>
+                <div class="item-value" id="route-duration"></div>
+              </div>
+            </div>
+            
+            <div class="overview-item">
+              <div class="icon-container">
+                <span class="icon">🏔️</span>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Сложность</div>
+                <div class="item-value" id="route-difficulty"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Route Description -->
+        <div class="route-description">
+          <h2>Описание</h2>
+          
+          <div class="description-content" id="route-description">
+            <!-- Динамически заполняется JavaScript -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- Map and Attractions -->
+      <div class="route-map-section">
+        <!-- Route Map -->
+        <div class="route-map">
+          <h2>Карта</h2>
+          
+          <div class="map-container">
+            <img id="route-map" src="https://via.placeholder.com/600x300" alt="Route Map">
+          </div>
+        </div>
+        
+        <!-- Route Attractions -->
+        <div class="route-attractions">
+          <h2>Достопримечательности</h2>
+          
+          <div class="attractions-list" id="route-attractions">
+            <!-- Динамически заполняется JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/user-menu.js"></script>
+  <script type="module" src="scripts/route.js"></script>
+</body>
+</html>

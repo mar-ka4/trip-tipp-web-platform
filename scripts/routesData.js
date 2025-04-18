@@ -1,0 +1,546 @@
+export default [
+  {
+    name: "Historical Landmarks and Iconic Sights of Berlin",
+    location: "Germany (Berlin)",
+    type: "пеший",
+    points: 12,
+    duration: "3 часа",
+    difficulty: "средняя",
+    gallery: ["img/berlin-1/b1.png", "img/berlin-1/b2.png", "img/berlin-1/b3.png", "img/berlin-1/b4.png"],
+    description:
+      "Ищете экскурсию на французском языке? Хотите истории, анекдоты и судьбы берлинцев? Мои туры для вас! Экскурсии с гидом, которые я предлагаю, позволят вам открыть для себя Берлин тихо, в небольшой группе, с исторической, но также политической, социальной и экономической точек зрения. Автор экскурсионного гида и книги о немецкой мемориальной политике, я в мельчайших деталях знаю столицу, в которой живу с 1994 года. Благодаря его журналистской деятельности и встречи многих свидетелей истории с 1945 года, которые позволили мне обогатить мои объяснения о душе этого города, которые трудно понять. Небольшой размер группы (до 8 человек) позволяет постоянно обмениваться идеями между участниками.",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Рейхстаг", image: "img/berlin-1/b1.png" },
+      { name: "Бранденбургские ворота", image: "img/berlin-1/b2.png" },
+      { name: "Берлинская стена", image: "img/berlin-1/b3.png" },
+      { name: "Мемориал Холокоста", image: "img/berlin-1/b4.png" },
+    ],
+    author: "mar_ka4"
+  },
+  {
+    name: "Vibrant Streets of Tokyo: Shibuya to Harajuku",
+    location: "Japan (Tokyo)",
+    type: "пеший",
+    points: 10,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/tokyo-1/t-1.png",
+      "img/tokyo-1/t-2.png",
+      "img/tokyo-1/t-3.png",
+      "img/tokyo-1/t-4.png",
+      "img/tokyo-1/t-5.png",
+      "img/tokyo-1/t-6.png",
+    ],
+    description:
+      "Погрузитесь в яркую энергию Токио с этим пешим маршрутом от оживленного перекрестка Сибуя до эклектичных улиц Харадзюку. Начните с культового перекрестка Сибуя, одного из самых загруженных в мире, и посетите статую верного пса Хатико. Прогуляйтесь по модным бутикам и кафе в районе Катакаура. Затем отправляйтесь в Харадзюку, центр молодежной культуры и уличной моды, где вас ждет знаменитая улица Такэсита с ее необычными магазинами и креативными угощениями.",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Перекресток Сибуя", image: "img/tokyo-1/t-1.png" },
+      { name: "Статуя Хатико", image: "img/tokyo-1/t-2.png" },
+      { name: "Улица Такэсита", image: "img/tokyo-1/t-3.png" },
+      { name: "Парк Ёёги", image: "img/tokyo-1/t-4.png" },
+    ],
+    author: "debil"
+  },
+  {
+    name: "Icelandic Ring Road Camper Adventure",
+    location: "Iceland (Ring Road)",
+    type: "автодом",
+    points: 10,
+    duration: "7 дней",
+    difficulty: "средняя",
+    gallery: [
+      "img/island-1/i1.png",
+      "img/island-1/i2.png",
+      "img/island-1/i3.png",
+      "img/island-1/i4.png",
+      "img/island-1/i5.png",
+      "img/island-1/i6.png",
+      "img/island-1/i7.png",
+      "img/island-1/i8.png",
+      "img/island-1/i9.png",
+    ],
+    description:
+      "Отправьтесь в незабываемое недельное путешествие по кольцевой дороге Исландии на автодоме. Начните в Рейкьявике и исследуйте гейзеры и водопады Золотого кольца, черные песчаные пляжи Южного побережья, спокойные Восточные фьорды и вулканические чудеса Севера. Основные достопримечательности включают Национальный парк Тингветлир, горячие источники Гейсир, водопад Гюдльфосс, пляж Рейнисфьяра, ледниковую лагуну Йёкюльсаурлоун, деревню Сейдисфьордюр и водопад Годафосс. Идеально для искателей приключений, жаждущих свободы, природы и необузданной красоты Исландии.",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Гейзер Строккюр", image: "img/island-1/i1.png" },
+      { name: "Водопад Гюдльфосс", image: "img/island-1/i2.png" },
+      { name: "Черный пляж Рейнисфьяра", image: "img/island-1/i3.png" },
+      { name: "Ледниковая лагуна Йёкюльсаурлоун", image: "img/island-1/i4.png" },
+    ],
+    author: "debil"
+  },
+  {
+    name: "Classic London Landmarks Walk",
+    location: "United Kingdom (London)",
+    type: "пеший",
+    points: 8,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/london-1/l1.png",
+      "img/london-1/l2.png",
+      "img/london-1/l3.png",
+      "img/london-1/l4.png",
+      "img/london-1/l5.png",
+      "img/london-1/l6.png",
+    ],
+    description:
+      "Погрузитесь в сердце Лондона с этим пешим маршрутом по его знаковым достопримечательностям! Начните с Биг-Бена и Вестминстерского аббатства, где оживает история британской короны. Пройдитесь по Трафальгарской площади, окружённой музеями и львами Нельсона. Увидьте смену караула у Букингемского дворца и прогуляйтесь вдоль Темзы к Лондонскому глазу, наслаждаясь панорамой города. Завершите тур у Тауэрского моста и Тауэра, хранящих многовековые тайны. Этот маршрут идеален для тех, кто хочет за один день увидеть лучшее в Лондоне!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Биг-Бен", image: "img/london-1/l1.png" },
+      { name: "Букингемский дворец", image: "img/london-1/l2.png" },
+      { name: "Трафальгарская площадь", image: "img/london-1/l3.png" },
+      { name: "Тауэрский мост", image: "img/london-1/l4.png" },
+    ],
+    author: "mar_ka4"
+  },
+  {
+    name: "New York: Iconic Skyline Adventure",
+    location: "United States (New York)",
+    type: "пеший",
+    points: 10,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/ny-1/ny (1).png",
+      "img/ny-1/ny (2).png",
+      "img/ny-1/ny (3).png",
+      "img/ny-1/ny (4).png",
+      "img/ny-1/ny (5).png",
+      "img/ny-1/ny (6).png",
+      "img/ny-1/ny (7).png",
+      "img/ny-1/ny (8).png",
+      "img/ny-1/ny (9).png",
+      "img/ny-1/ny (10).png"
+    ],
+    description:
+      "Окунитесь в пульсирующую энергию Нью-Йорка с этим пешим маршрутом по его легендарным достопримечательностям! Начните с Таймс-сквер, где сияют неоновые огни и кипит жизнь. Пройдитесь до Центрального парка, зелёного оазиса среди небоскрёбов, идеального для спокойной прогулки. Посетите Рокфеллеровский центр, знаменитый своим катком и панорамными видами с Top of the Rock. Завершите тур у Статуи Свободы, символа свободы, с короткой поездкой на пароме, открывающей захватывающий вид на горизонт Манхэттена. Этот маршрут идеален для тех, кто хочет за один день почувствовать дух Большого Яблока!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Таймс-сквер", image: "img/ny-1/ny (1).png" },
+      { name: "Центральный парк", image: "img/ny-1/ny (2).png" },
+      { name: "Рокфеллеровский центр", image: "img/ny-1/ny (3).png" },
+      { name: "Статуя Свободы", image: "img/ny-1/ny (4).png" },
+    ],
+    author: "mar_ka4"
+  },
+  {
+    name: "Swiss Alps: Matterhorn Trail Adventure",
+    location: "Switzerland (Zermatt)",
+    type: "поход",
+    points: 8,
+    duration: "5 часов",
+    difficulty: "средняя",
+    gallery: [
+      "img/switzerland/swz (1).png",
+      "img/switzerland/swz (2).png",
+      "img/switzerland/swz (3).png",
+      "img/switzerland/swz (4).png",
+      "img/switzerland/swz (5).png",
+      "img/switzerland/swz (6).png"
+    ],
+    description:
+      "Отправьтесь в захватывающий поход по Альпам Швейцарии с этим маршрутом вокруг легендарного Маттерхорна! Начните из Церматта, живописного городка у подножия гор. Пройдите по тропе к озеру Шварцзее, где открывается потрясающий вид на Маттерхорн. Продолжите путь через альпийские луга к смотровой площадке Хёрнли, где вас ждут панорамы заснеженных вершин. Завершите маршрут у горного приюта, наслаждаясь тишиной природы. Этот тур идеален для любителей активного отдыха, готовых вдохнуть свежий горный воздух и открыть красоту швейцарских Альп!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Церматт", image: "img/switzerland/swz (1).png" },
+      { name: "Озеро Шварцзее", image: "img/switzerland/swz (2).png" },
+      { name: "Смотровая площадка Хёрнли", image: "img/switzerland/swz (3).png" },
+      { name: "Маттерхорн", image: "img/switzerland/swz (4).png" },
+    ],
+    author: "debil"
+  },
+  {
+    name: "Очарование Парижа: от Эйфелевой башни до Маре",
+    location: "France (Paris)",
+    type: "пеший",
+    points: 10,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/paris/p1.png",
+      "img/paris/p2.png",
+      "img/paris/p3.png",
+      "img/paris/p4.png",
+      "img/paris/p5.png",
+      "img/paris/p6.png"
+    ],
+    description:
+      "Погрузитесь в романтику Парижа с этим пешим маршрутом по его культовым местам! Начните у Эйфелевой башни, символа города, и насладитесь видами с Марсова поля. Прогуляйтесь по живописной набережной Сены, любуясь мостами и книжными лавками. Окунитесь в богемную атмосферу Монмартра с его базиликой Сакре-Кёр и узкими улочками. Завершите тур в модном квартале Маре, где старинные особняки соседствуют с бутиками и кафе. Идеально для тех, кто хочет почувствовать дух Парижа за один день!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Эйфелева башня", image: "img/paris/p1.png" },
+      { name: "Монмартр", image: "img/paris/p2.png" },
+      { name: "Набережная Сены", image: "img/paris/p3.png" },
+      { name: "Квартал Маре", image: "img/paris/p4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Берлин: от Бранденбурга до Кройцберга",
+    location: "Germany (Berlin)",
+    type: "пеший",
+    points: 10,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/berlin-2/b1.png",
+      "img/berlin-2/b2.png",
+      "img/berlin-2/b3.png",
+      "img/berlin-2/b4.png",
+      "img/berlin-2/b5.png",
+      "img/berlin-2/b6.png"
+    ],
+    description:
+      "Откройте для себя многоликий Берлин с этим пешим маршрутом! Начните у Бранденбургских ворот, символа единства Германии. Прогуляйтесь вдоль Истсайдской галереи, где сохранились фрагменты Берлинской стены с яркими муралами. Погрузитесь в атмосферу альтернативного района Кройцберг с его уличным искусством и кафе. Завершите тур на оживлённой Потсдамской площади, где современность встречается с историей. Этот маршрут идеален для тех, кто хочет увидеть Берлин с разных сторон!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Бранденбургские ворота", image: "img/berlin-2/b1.png" },
+      { name: "Истсайдская галерея", image: "img/berlin-2/b2.png" },
+      { name: "Кройцберг", image: "img/berlin-2/b3.png" },
+      { name: "Потсдамская площадь", image: "img/berlin-2/b4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Эдинбург: Королевская миля и Старый город",
+    location: "Scotland (Edinburgh)",
+    type: "пеший",
+    points: 8,
+    duration: "3 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/edinburgh/e1.png",
+      "img/edinburgh/e2.png",
+      "img/edinburgh/e3.png",
+      "img/edinburgh/e4.png",
+      "img/edinburgh/e5.png"
+    ],
+    description:
+      "Исследуйте историческое сердце Эдинбурга с этим пешим маршрутом! Начните с Королевской мили, главной артерии Старого города, усеянной старинными зданиями и магазинами. Посетите замок Эдинбург, возвышающийся над городом, и узнайте его многовековую историю. Поднимитесь на холм Калтон, чтобы насладиться панорамой города. Завершите прогулку в Старом городе, где узкие улочки хранят тайны шотландской столицы. Идеально для любителей истории и живописных видов!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Королевская миля", image: "img/edinburgh/e1.png" },
+      { name: "Замок Эдинбург", image: "img/edinburgh/e2.png" },
+      { name: "Холм Калтон", image: "img/edinburgh/e3.png" },
+      { name: "Старый город", image: "img/edinburgh/e4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Шотландия: дикие пейзажи и озёра",
+    location: "Scotland (Highlands)",
+    type: "автодом",
+    points: 12,
+    duration: "7 дней",
+    difficulty: "средняя",
+    gallery: [
+      "img/scotland/s1.png",
+      "img/scotland/s2.png",
+      "img/scotland/s3.png",
+      "img/scotland/s4.png",
+      "img/scotland/s5.png",
+      "img/scotland/s6.png",
+      "img/scotland/s7.png",
+      "img/scotland/s8.png"
+    ],
+    description:
+      "Отправьтесь в эпическое путешествие по Шотландии на автодоме! Начните с мистического озера Лох-Несс, где можно поискать легендарную Несси. Исследуйте живописный остров Скай с его скалистыми пейзажами и деревнями. Проедьте через долину Гленко, окружённую горами, и завершите тур по дороге Северного побережья 500, одной из самых красивых трасс мира. Этот маршрут идеален для любителей природы и свободы передвижения!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Озеро Лох-Несс", image: "img/scotland/s1.png" },
+      { name: "Остров Скай", image: "img/scotland/s2.png" },
+      { name: "Гленко", image: "img/scotland/s3.png" },
+      { name: "Северное побережье 500", image: "img/scotland/s4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Рим: вечный город от Колизея до Трастевере",
+    location: "Italy (Rome)",
+    type: "пеший",
+    points: 10,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/rome/r1.png",
+      "img/rome/r2.png",
+      "img/rome/r3.png",
+      "img/rome/r4.png",
+      "img/rome/r5.png",
+      "img/rome/r6.png"
+    ],
+    description:
+      "Погрузитесь в историю Рима с этим пешим маршрутом по вечному городу! Начните с Колизея, легендарной арены гладиаторов, и посетите величественный Пантеон с его уникальным куполом. Прогуляйтесь по живописному району Трастевере, полному уютных кафе и старинных улочек. Завершите тур на Аппиевой дороге, одной из старейших дорог мира, окружённой античными руинами. Этот маршрут идеален для тех, кто хочет прикоснуться к величию Рима!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Колизей", image: "img/rome/r1.png" },
+      { name: "Пантеон", image: "img/rome/r2.png" },
+      { name: "Трастевере", image: "img/rome/r3.png" },
+      { name: "Аппиева дорога", image: "img/rome/r4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Барселона: от Саграды Фамилии до Барселонеты",
+    location: "Spain (Barcelona)",
+    type: "пеший",
+    points: 10,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/barcelona/b1.png",
+      "img/barcelona/b2.png",
+      "img/barcelona/b3.png",
+      "img/barcelona/b4.png",
+      "img/barcelona/b5.png",
+      "img/barcelona/b6.png"
+    ],
+    description:
+      "Исследуйте яркую Барселону с этим пешим маршрутом! Начните с Саграды Фамилии, шедевра Гауди, и посетите парк Гуэль с его красочными мозаиками. Прогуляйтесь по модному кварталу Эль-Борн, где старинные улицы полны бутиков и кафе. Завершите тур на пляже Барселонета, наслаждаясь солнцем и морским бризом. Этот маршрут идеален для тех, кто хочет увидеть лучшее в Барселоне за один день!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Саграда Фамилия", image: "img/barcelona/b1.png" },
+      { name: "Парк Гуэль", image: "img/barcelona/b2.png" },
+      { name: "Эль-Борн", image: "img/barcelona/b3.png" },
+      { name: "Пляж Барселонета", image: "img/barcelona/b4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Амстердам: каналы и культура",
+    location: "Netherlands (Amsterdam)",
+    type: "пеший",
+    points: 8,
+    duration: "3 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/amsterdam/a1.png",
+      "img/amsterdam/a2.png",
+      "img/amsterdam/a3.png",
+      "img/amsterdam/a4.png",
+      "img/amsterdam/a5.png"
+    ],
+    description:
+      "Откройте для себя очарование Амстердама с этим пешим маршрутом! Прогуляйтесь вдоль живописных каналов, внесённых в список ЮНЕСКО, и посетите уютный квартал Йордан с его кафе и рынками. Исследуйте музейный квартал, где находятся музей Ван Гога и Рейксмузеум. Завершите тур в парке Вондела, идеальном месте для отдыха. Этот маршрут подойдёт тем, кто хочет насладиться культурой и красотой Амстердама!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Каналы", image: "img/amsterdam/a1.png" },
+      { name: "Квартал Йордан", image: "img/amsterdam/a2.png" },
+      { name: "Музейный квартал", image: "img/amsterdam/a3.png" },
+      { name: "Парк Вондела", image: "img/amsterdam/a4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Лиссабон: от Белем до Алфамы",
+    location: "Portugal (Lisbon)",
+    type: "пеший",
+    points: 10,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/lisbon/l1.png",
+      "img/lisbon/l2.png",
+      "img/lisbon/l3.png",
+      "img/lisbon/l4.png",
+      "img/lisbon/l5.png",
+      "img/lisbon/l6.png"
+    ],
+    description:
+      "Погрузитесь в солнечную атмосферу Лиссабона с этим пешим маршрутом! Начните в районе Белем, где находится башня Белем и монастырь Жеронимуш. Прогуляйтесь по старинному району Алфама с его узкими улочками и фаду-барами. Посетите мост 25 Апреля, напоминающий мост в Сан-Франциско, и завершите тур на смотровой площадке Санта-Жушта с панорамным видом на город. Этот маршрут идеален для любителей истории и живописных видов!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Белем", image: "img/lisbon/l1.png" },
+      { name: "Алфама", image: "img/lisbon/l2.png" },
+      { name: "Мост 25 Апреля", image: "img/lisbon/l3.png" },
+      { name: "Санта-Жушта", image: "img/lisbon/l4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Прага: магия старого города",
+    location: "Czech Republic (Prague)",
+    type: "пеший",
+    points: 8,
+    duration: "3 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/prague/p1.png",
+      "img/prague/p2.png",
+      "img/prague/p3.png",
+      "img/prague/p4.png",
+      "img/prague/p5.png"
+    ],
+    description:
+      "Исследуйте сказочную Прагу с этим пешим маршрутом! Начните с Карлова моста, украшенного статуями и пропитанного историей. Прогуляйтесь по Староместской площади с её знаменитыми астрономическими часами. Посетите Вышеград, древнюю крепость с потрясающими видами. Завершите тур в очаровательном районе Мала Страна, полном барочных зданий и уютных кафе. Этот маршрут идеален для тех, кто хочет ощутить магию Праги!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Карлов мост", image: "img/prague/p1.png" },
+      { name: "Староместская площадь", image: "img/prague/p2.png" },
+      { name: "Вышеград", image: "img/prague/p3.png" },
+      { name: "Мала Страна", image: "img/prague/p4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Вена: императорская элегантность",
+    location: "Austria (Vienna)",
+    type: "пеший",
+    points: 10,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/vienna/v1.png",
+      "img/vienna/v2.png",
+      "img/vienna/v3.png",
+      "img/vienna/v4.png",
+      "img/vienna/v5.png",
+      "img/vienna/v6.png"
+    ],
+    description:
+      "Откройте для себя имперскую Вену с этим пешим маршрутом! Начните с собора Святого Стефана, готического шедевра в сердце города. Посетите роскошный дворец Шёнбрунн с его садами. Прогуляйтесь по парку Пратер, известному своим колесом обозрения. Завершите тур в уютном квартале Шпиттельберг, полном кафе и галерей. Этот маршрут подойдёт любителям истории, архитектуры и венского шарма!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Собор Святого Стефана", image: "img/vienna/v1.png" },
+      { name: "Дворец Шёнбрунн", image: "img/vienna/v2.png" },
+      { name: "Пратер", image: "img/vienna/v3.png" },
+      { name: "Шпиттельберг", image: "img/vienna/v4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Токио: от Сибуи до Гинзы",
+    location: "Japan (Tokyo)",
+    type: "пеший",
+    points: 10,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/tokyo-2/t1.png",
+      "img/tokyo-2/t2.png",
+      "img/tokyo-2/t3.png",
+      "img/tokyo-2/t4.png",
+      "img/tokyo-2/t5.png",
+      "img/tokyo-2/t6.png"
+    ],
+    description:
+      "Погрузитесь в контрасты Токио с этим пешим маршрутом! Начните в оживлённой Сибуе, известной своим перекрёстком и небоскрёбами. Посетите исторический район Асакуса с храмом Сэнсо-дзи, старейшим в городе. Прогуляйтесь по зелёному парку Уэно, идеальному для отдыха. Завершите тур в роскошном районе Гинза, где расположены бутики и рестораны мирового класса. Этот маршрут идеален для тех, кто хочет увидеть разные грани Токио!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Сибуя", image: "img/tokyo-2/t1.png" },
+      { name: "Асакуса", image: "img/tokyo-2/t2.png" },
+      { name: "Парк Уэно", image: "img/tokyo-2/t3.png" },
+      { name: "Гинза", image: "img/tokyo-2/t4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Исландия: Золотое кольцо и южное побережье",
+    location: "Iceland (Golden Circle)",
+    type: "автодом",
+    points: 10,
+    duration: "5 дней",
+    difficulty: "средняя",
+    gallery: [
+      "img/iceland-2/i1.png",
+      "img/iceland-2/i2.png",
+      "img/iceland-2/i3.png",
+      "img/iceland-2/i4.png",
+      "img/iceland-2/i5.png",
+      "img/iceland-2/i6.png",
+      "img/iceland-2/i7.png"
+    ],
+    description:
+      "Исследуйте природные чудеса Исландии с этим путешествием на автодоме! Начните с Золотого кольца, включающего Национальный парк Тингветлир и гейзер Строккюр. Посетите водопад Сельяландсфосс, за которым можно пройти. Полюбуйтесь ледниковой лагуной Йёкюльсаурлоун с её айсбергами. Завершите тур в Рейкьявике, где вас ждут уютные кафе и яркая культурная жизнь. Этот маршрут идеален для любителей природы и приключений!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Золотое кольцо", image: "img/iceland-2/i1.png" },
+      { name: "Йёкюльсаурлоун", image: "img/iceland-2/i2.png" },
+      { name: "Сельяландсфосс", image: "img/iceland-2/i3.png" },
+      { name: "Рейкьявик", image: "img/iceland-2/i4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Флоренция: колыбель Ренессанса",
+    location: "Italy (Florence)",
+    type: "пеший",
+    points: 8,
+    duration: "3 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/florence/f1.png",
+      "img/florence/f2.png",
+      "img/florence/f3.png",
+      "img/florence/f4.png",
+      "img/florence/f5.png"
+    ],
+    description:
+      "Погрузитесь в искусство и историю Флоренции с этим пешим маршрутом! Начните с собора Санта-Мария-дель-Фьоре, увенчанного куполом Брунеллески. Прогуляйтесь по мосту Понте-Веккьо, усыпанному ювелирными лавками. Посетите сады Боболи, оазис зелени и скульптур. Завершите тур на площади Микеланджело, откуда открывается захватывающий вид на город. Этот маршрут идеален для любителей искусства и архитектуры!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Санта-Мария-дель-Фьоре", image: "img/florence/f1.png" },
+      { name: "Понте-Веккьо", image: "img/florence/f2.png" },
+      { name: "Сады Боболи", image: "img/florence/f3.png" },
+      { name: "Площадь Микеланджело", image: "img/florence/f4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Стамбул: мост между Востоком и Западом",
+    location: "Turkey (Istanbul)",
+    type: "пеший",
+    points: 10,
+    duration: "4 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/istanbul/i1.png",
+      "img/istanbul/i2.png",
+      "img/istanbul/i3.png",
+      "img/istanbul/i4.png",
+      "img/istanbul/i5.png",
+      "img/istanbul/i6.png"
+    ],
+    description:
+      "Исследуйте Стамбул, где встречаются Восток и Запад, с этим пешим маршрутом! Начните с Айя-Софии, шедевра византийской архитектуры. Прогуляйтесь по району Султанахмет, где находится Голубая мечеть. Полюбуйтесь видами Босфора с набережной. Завершите тур на рынке Капалы Чарши, одном из крупнейших базаров мира. Этот маршрут идеален для тех, кто хочет ощутить уникальную атмосферу Стамбула!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Айя-София", image: "img/istanbul/i1.png" },
+      { name: "Султанахмет", image: "img/istanbul/i2.png" },
+      { name: "Босфор", image: "img/istanbul/i3.png" },
+      { name: "Капалы Чарши", image: "img/istanbul/i4.png" }
+    ],
+    author: "triptips"
+  },
+  {
+    name: "Копенгаген: скандинавский шарм",
+    location: "Denmark (Copenhagen)",
+    type: "пеший",
+    points: 8,
+    duration: "3 часа",
+    difficulty: "легкая",
+    gallery: [
+      "img/copenhagen/c1.png",
+      "img/copenhagen/c2.png",
+      "img/copenhagen/c3.png",
+      "img/copenhagen/c4.png",
+      "img/copenhagen/c5.png"
+    ],
+    description:
+      "Откройте для себя уютный Копенгаген с этим пешим маршрутом! Начните с Нюхавна, живописной набережной с цветными домами. Посетите сады Тиволи, один из старейших парков развлечений. Прогуляйтесь по свободному району Кристиания, известному своим альтернативным духом. Завершите тур у статуи Русалочки, символа города. Этот маршрут идеален для тех, кто хочет насладиться скандинавским шармом и культурой!",
+    previewMap: "img/prev-map-1.png",
+    landmarks: [
+      { name: "Нюхавн", image: "img/copenhagen/c1.png" },
+      { name: "Сады Тиволи", image: "img/copenhagen/c2.png" },
+      { name: "Кристиания", image: "img/copenhagen/c3.png" },
+      { name: "Русалочка", image: "img/copenhagen/c4.png" }
+    ],
+    author: "triptips"
+  }
+];

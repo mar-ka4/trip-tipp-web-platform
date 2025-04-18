@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Explorer - Base Template</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- Подключение специфичных стилей, если нужны -->
+  <!-- <link rel="stylesheet" href="profile-styles.css"> -->
+</head>
+<body>
+  <!-- Full-width header with fixed position -->
+  <header>
+    <div class="inner-container">
+      <div class="header-content">
+        <div class="logo">
+          <img src="logo.png" alt="Travel Logo">
+        </div>
+        
+        <div class="search-filter-block">
+          <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search destinations...">
+            <button class="search-button">
+              <span class="icon-search"></span>
+            </button>
+          </div>
+          
+          <div class="filter-button">
+            <span class="icon-filter"></span>
+            <span>Фильтры</span>
+          </div>
+        </div>
+        
+        <div class="user-section">
+          <button class="user-button" id="userButton">
+            <div class="hamburger-icon">
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+            </div>
+            <div class="user-avatar">
+              <!-- Red circle avatar placeholder -->
+            </div>
+          </button>
+          
+          <div class="user-menu" id="userMenu">
+            <div class="menu-item">Profile</div>
+            <div class="menu-item">Login and security</div>
+            <div class="menu-item">Settings</div>
+            
+            <div class="menu-divider"></div>
+            
+            <button class="create-route-btn">
+              <span class="icon-plus"></span>
+              <span>Create a route</span>
+            </button>
+            
+            <div class="menu-item">Your routes</div>
+            <div class="menu-item">Analytics</div>
+            <div class="menu-item">Payments</div>
+            <div class="menu-item">Sign out</div>
+            
+            <div class="social-links">
+              <div class="social-link"></div>
+              <div class="social-link"></div>
+              <div class="social-link"></div>
+              <div class="social-link"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main content with scrollable area -->
+  <div class="main-content">
+    <div class="inner-container">
+      <!-- Здесь будет вставляться специфичный контент (например, из profile-content.html) -->
+    </div>
+  </div>
+
+  <script src="scripts/user-menu.js"></script>
+  <!-- Скрипты для защиты, если нужны, можно оставить или убрать -->
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92f48d302ef032ec',t:'MTc0NDQ4MDA3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92fb9fdb39ce44fd',t:'MTc0NDU1NDIzOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

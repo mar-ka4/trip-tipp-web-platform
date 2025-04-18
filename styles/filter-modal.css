@@ -1,0 +1,419 @@
+/* Стили модального окна фильтров */
+.filter-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.filter-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.filter-modal {
+  background-color: #292930;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  color: #fff;
+}
+
+.filter-overlay.active .filter-modal {
+  transform: translateY(0);
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #2e2e2e;
+  position: sticky;
+  top: 0;
+  background-color: #292930;
+  z-index: 10;
+  border-radius: 16px 16px 0 0;
+}
+
+.filter-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.filter-content {
+  padding: 0 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.filter-section {
+  padding: 24px 0;
+  border-bottom: 1px solid #2e2e2e;
+}
+
+.filter-section:last-child {
+  border-bottom: none;
+}
+
+.filter-section h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 16px 0;
+  color: #fff;
+}
+
+/* Стили для кнопок-фильтров */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #3a3f4b;
+  border-radius: 22px;
+  padding: 5px;
+  background-color: #24242b;
+}
+
+.filter-button-option {
+  background-color: transparent;
+  border: 1px solid #3a3f4b;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-button-option:hover {
+  border-color: #8888c9;
+}
+
+.filter-button-option.active {
+  border-color: #8888c9;
+  background-color: rgba(136, 136, 201, 0.1);
+}
+
+/* Стили для слайдеров с двумя ползунками */
+.range-slider {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  margin: 30px 0;
+}
+
+.range-slider-track {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #3a3f4b;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.range-slider-min, .range-slider-max {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  z-index: 2;
+}
+
+.range-slider-min::-webkit-slider-thumb, .range-slider-max::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8888c9;
+  cursor: pointer;
+  border: 2px solid #292930;
+}
+
+.range-slider-min::-moz-range-thumb, .range-slider-max::-moz-range-thumb {
+  pointer-events: all;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8888c9;
+  cursor: pointer;
+  border: 2px solid #292930;
+}
+
+/* Стили для активной части трека слайдера */
+.active-track {
+  position: absolute;
+  height: 4px;
+  background-color: #8888c9;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* Стили для отображения значений длительности */
+.range-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #b0b3b8;
+}
+
+.range-value-min, .range-value-max {
+  user-select: none;
+}
+
+/* Стили для полей ввода значений диапазона */
+.range-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  gap: 15px;
+}
+
+.input-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 80px;
+  background-color: #1f1f25;
+  border-radius: 50px;
+  border: 1px solid #3a3f4b;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.range-input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.range-input:focus {
+  outline: none;
+}
+
+.input-wrapper:focus-within {
+  border-color: #8888c9;
+}
+
+.input-suffix {
+  position: absolute;
+  right: 10px;
+  color: #b0b3b8;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* Стили для input[type=number] */
+.range-input::-webkit-inner-spin-button,
+.range-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.range-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Стили для кнопок выбора типа длительности */
+.duration-type-buttons {
+  display: flex;
+  margin-top: 16px;
+  gap: 8px;
+  border: 1px solid #3a3f4b;
+  border-radius: 24px;
+  padding: 5px;
+  background-color: #24242b;
+}
+
+.duration-type-button {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid #3a3f4b;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.duration-type-button:hover {
+  border-color: #8888c9;
+}
+
+.duration-type-button.active {
+  border-color: #8888c9;
+  background-color: rgba(136, 136, 201, 0.1);
+}
+
+.filter-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-top: 1px solid #2e2e2e;
+  position: sticky;
+  bottom: 0;
+  background-color: #292930;
+  z-index: 10;
+  border-radius: 0 0 16px 16px;
+}
+
+.clear-button {
+  background: none;
+  border: 1px solid #49546e00;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+.clear-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.apply-button {
+  background-color: #8888c9;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.apply-button:hover {
+  background-color: #7777c4;
+}
+
+/* Кастомный скроллбар для модального окна */
+.filter-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filter-modal::-webkit-scrollbar-track {
+  background: #1f1f25;
+  border-radius: 10px;
+}
+
+.filter-modal::-webkit-scrollbar-thumb {
+  background: #3a3f4b;
+  border-radius: 10px;
+}
+
+.filter-modal::-webkit-scrollbar-thumb:hover {
+  background: #4a4f5b;
+}
+
+/* Кастомный скроллбар для блока фильтров */
+.filter-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.filter-content::-webkit-scrollbar-track {
+  background: rgba(31, 31, 37, 0.5);
+  border-radius: 10px;
+}
+
+.filter-content::-webkit-scrollbar-thumb {
+  background: rgba(58, 63, 75, 0.5);
+  border-radius: 10px;
+}
+
+.filter-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(58, 63, 75, 0.8);
+}
+
+/* Поддержка Firefox для .filter-content */
+.filter-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(58, 63, 75, 0.5) rgba(31, 31, 37, 0.5);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .filter-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .filter-buttons {
+    gap: 6px;
+  }
+
+  .filter-button-option {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .filter-footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .clear-button,
+  .apply-button {
+    width: 100%;
+  }
+  
+  .range-inputs {
+    gap: 8px;
+  }
+  
+  .range-input {
+    font-size: 13px;
+    padding: 8px;
+  }
+  
+  .range-values {
+    font-size: 13px;
+  }
+}

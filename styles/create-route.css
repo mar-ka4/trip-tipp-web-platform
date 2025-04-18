@@ -1,0 +1,667 @@
+/* Create Route Page Styles with cr- prefix to avoid conflicts */
+
+/* Import Google Fonts for more modern typography */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+/* Adjust main content margin for no navigation bar */
+.main-content {
+  margin-top: 80px !important; /* Override the default margin that accounts for navigation */
+}
+
+/* Global typography updates for the create route page */
+.cr-content-wrapper,
+.cr-content-wrapper * {
+  font-family: "Inter", sans-serif;
+}
+
+/* Page header styling */
+.cr-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto 40px; /* Increased bottom margin */
+}
+
+.cr-page-header h1 {
+  font-size: 36px; /* Larger font size */
+  margin: 0;
+  font-weight: 300; /* Thinner font weight */
+  letter-spacing: -0.5px; /* Tighter letter spacing for modern look */
+}
+
+/* Route creator content */
+.cr-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px; /* Increased padding */
+  background-color: #05050700;
+  border-radius: 20px; /* Slightly larger border radius */
+  margin-bottom: 50px; /* Increased bottom margin */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.cr-content-wrapper h2 {
+  font-size: 28px; /* Larger font size */
+  font-weight: 300; /* Thinner font weight */
+  margin-bottom: 20px; /* Increased margin */
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.cr-hint {
+  font-size: 15px;
+  color: #a0a0e1;
+  margin-bottom: 40px; /* Increased margin */
+  font-weight: 300;
+}
+
+/* Form styling */
+.cr-form-group {
+  margin-bottom: 40px; /* Increased margin between form groups */
+}
+
+.cr-form-group label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500; /* Medium weight */
+  margin-bottom: 12px; /* Increased margin */
+  color: #b0b3b8;
+  letter-spacing: 0.2px;
+}
+
+.cr-form-group input,
+.cr-form-group textarea {
+  width: 100%;
+  padding: 14px; /* Increased padding */
+  background-color: rgba(0, 0, 0, 0.2); /* More subtle background */
+  border: 1px solid #2e2e2e;
+  border-radius: 12px; /* Slightly larger border radius */
+  color: #ffffff;
+  font-size: 15px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* More subtle shadow */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cr-form-group input:focus,
+.cr-form-group textarea:focus {
+  outline: none;
+  border-color: #a0a0e1;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 5px rgba(160, 160, 225, 0.2);
+}
+
+/* Выделяющая обводка только для поля названия маршрута в первом шаге */
+#cr-route-form .cr-form-group input {
+  border-color: #a0a0e1;
+}
+
+.cr-form-group textarea {
+  resize: vertical;
+  min-height: 120px; /* Ensure textarea has good height */
+  line-height: 1.5; /* Improved line height for readability */
+}
+
+/* Выпадающие списки */
+.cr-form-group select {
+  width: 100%;
+  padding: 14px; /* Increased padding */
+  background-color: rgba(40, 40, 51, 0.7); /* More subtle background */
+  border: 1px solid #2e2e2e;
+  border-radius: 12px; /* Slightly larger border radius */
+  color: #ffffff;
+  font-size: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* More subtle shadow */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none; /* Remove default appearance */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a0a0e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 40px; /* Space for the custom arrow */
+}
+
+.cr-form-group select:focus {
+  outline: none;
+  border-color: #a0a0e1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(160, 160, 225, 0.2);
+}
+
+/* Select group */
+.cr-select-group {
+  display: flex;
+  gap: 30px; /* Increased gap */
+}
+
+.cr-select-wrapper {
+  flex: 1;
+}
+
+/* Photo upload */
+.cr-photo-upload {
+  display: flex;
+  gap: 15px; /* Increased gap */
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.cr-photo-placeholder {
+  width: 90px; /* Slightly larger */
+  height: 90px; /* Slightly larger */
+  background-color: transparent;
+  border: 2px dashed rgba(176, 179, 184, 0.5); /* More subtle border */
+  border-radius: 12px; /* Slightly larger border radius */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b0b3b8;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.cr-photo-placeholder:hover {
+  border-color: #a0a0e1;
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.cr-photo-placeholder.cr-preview-photo {
+  border: 2px solid #a0a0e1;
+}
+
+.cr-photo-placeholder i {
+  font-size: 24px; /* Larger icon */
+  opacity: 0.7; /* More subtle */
+}
+
+.cr-photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cr-remove-photo-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: rgba(255, 77, 77, 0.9); /* Slightly transparent */
+  border: none;
+  border-radius: 50%;
+  width: 26px; /* Slightly larger */
+  height: 26px; /* Slightly larger */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cr-remove-photo-btn i {
+  color: #ffffff;
+  font-size: 12px;
+  opacity: 1; /* Full opacity for the icon */
+}
+
+.cr-remove-photo-btn:hover {
+  background-color: #e04343;
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.cr-add-photo-wrapper {
+  margin-top: 15px;
+}
+
+.cr-add-photo-btn {
+  background-color: rgba(160, 160, 225, 0.2); /* More subtle background */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #a0a0e1; /* Added border */
+  border-radius: 30px; /* Rounder corners */
+  font-size: 15px;
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cr-add-photo-btn:hover {
+  background-color: rgba(160, 160, 225, 0.3);
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.cr-add-photo-btn:disabled {
+  background-color: rgba(46, 46, 46, 0.5);
+  color: rgba(176, 179, 184, 0.5);
+  border-color: transparent;
+  cursor: not-allowed;
+}
+
+/* Save button */
+.cr-save-btn {
+  background-color: #a0a0e1;
+  color: #ffffff;
+  padding: 14px 28px; /* Larger padding */
+  border: none;
+  border-radius: 30px; /* Rounder corners */
+  font-size: 16px; /* Larger font */
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px; /* Added margin */
+}
+
+.cr-save-btn:hover {
+  background-color: #8f8fd1;
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+/* Route points */
+.cr-route-points {
+  margin-top: 60px; /* Increased margin */
+  border-top: 1px solid rgba(46, 46, 46, 0.5); /* Subtle separator */
+  padding-top: 40px; /* Padding after separator */
+}
+
+/* Step inactive state for blurred steps */
+.cr-step-inactive {
+  filter: blur(3px);
+  pointer-events: none;
+  opacity: 0.7;
+  position: relative;
+  transition: filter 0.5s ease, opacity 0.5s ease;
+}
+
+.cr-step-inactive::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+.cr-point-card {
+  background-color: rgba(31, 31, 37, 0.7); /* More subtle background */
+  padding: 25px; /* Increased padding */
+  border-radius: 16px; /* Slightly larger border radius */
+  margin-bottom: 25px; /* Increased margin */
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cr-point-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cr-point-card h3 {
+  font-size: 20px; /* Larger font */
+  font-weight: 300; /* Thinner weight */
+  margin-bottom: 20px; /* Increased margin */
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.cr-remove-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.2s ease;
+}
+
+.cr-remove-btn i {
+  color: rgba(255, 77, 77, 0.8); /* Slightly transparent */
+  font-size: 20px; /* Larger icon */
+  transition: color 0.3s;
+}
+
+.cr-remove-btn:hover {
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.cr-remove-btn:hover i {
+  color: #e04343;
+}
+
+.cr-add-btn {
+  background-color: rgba(160, 160, 225, 0.2); /* More subtle background */
+  color: #ffffff;
+  padding: 12px 24px; /* Increased padding */
+  border: 1px solid #a0a0e1; /* Added border */
+  border-radius: 30px; /* Rounder corners */
+  font-size: 16px; /* Larger font */
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  margin-right: 15px; /* Increased margin */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cr-add-btn:hover {
+  background-color: rgba(160, 160, 225, 0.3);
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.cr-save-route-btn {
+  background-color: rgba(176, 179, 184, 0.2); /* More subtle background */
+  color: #ffffff;
+  padding: 12px 24px; /* Increased padding */
+  border: 1px solid #b0b3b8; /* Added border */
+  border-radius: 30px; /* Rounder corners */
+  font-size: 16px; /* Larger font */
+  font-weight: 500; /* Medium weight */
+  cursor: not-allowed;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cr-save-route-btn.active {
+  background-color: #a0a0e1;
+  border-color: #a0a0e1;
+  cursor: pointer;
+}
+
+.cr-save-route-btn.active:hover {
+  background-color: #8f8fd1;
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.cr-save-route-btn.disabled {
+  background-color: rgba(46, 46, 46, 0.3);
+  color: rgba(176, 179, 184, 0.5);
+  border-color: rgba(46, 46, 46, 0.5);
+  cursor: not-allowed;
+}
+
+/* Route coordinates */
+.cr-route-coordinates {
+  margin-top: 60px; /* Increased margin */
+  border-top: 1px solid rgba(46, 46, 46, 0.5); /* Subtle separator */
+  padding-top: 40px; /* Padding after separator */
+}
+
+.cr-coordinates-content {
+  display: flex;
+  gap: 30px; /* Increased gap */
+}
+
+.cr-points-list {
+  width: 320px; /* Slightly wider */
+  background-color: rgba(31, 31, 37, 0.7); /* More subtle background */
+  border-radius: 16px; /* Slightly larger border radius */
+  padding: 20px; /* Increased padding */
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+}
+
+.cr-search-bar {
+  position: relative;
+  margin-bottom: 20px; /* Increased margin */
+}
+
+.cr-search-bar input {
+  width: 100%;
+  padding: 12px 40px 12px 15px; /* Adjusted padding */
+  background-color: rgba(40, 40, 51, 0.5); /* More subtle background */
+  border: 1px solid rgba(46, 46, 46, 0.7);
+  border-radius: 30px; /* Rounder corners */
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.cr-search-bar i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(176, 179, 184, 0.7); /* More subtle color */
+  font-size: 16px; /* Larger icon */
+}
+
+#cr-coordinates-points-container {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px; /* Increased margin */
+  padding-right: 5px; /* Space for scrollbar */
+}
+
+/* Custom scrollbar for the points container */
+#cr-coordinates-points-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+#cr-coordinates-points-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#cr-coordinates-points-container::-webkit-scrollbar-thumb {
+  background: rgba(160, 160, 225, 0.3);
+  border-radius: 10px;
+}
+
+#cr-coordinates-points-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 160, 225, 0.5);
+}
+
+.cr-coordinates-point-card {
+  background-color: rgba(40, 40, 51, 0.5); /* More subtle background */
+  padding: 15px; /* Increased padding */
+  border-radius: 12px; /* Slightly larger border radius */
+  margin-bottom: 15px; /* Increased margin */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.cr-coordinates-point-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cr-coordinates-point-card.active {
+  border: 1px solid #a0a0e1;
+  background-color: rgba(40, 40, 51, 0.8); /* Slightly darker when active */
+}
+
+.cr-coordinates-point-card .cr-point-header {
+  display: flex;
+  gap: 15px; /* Increased gap */
+  margin-bottom: 15px; /* Increased margin */
+}
+
+.cr-coordinates-point-card .cr-photo-placeholder {
+  width: 60px; /* Larger */
+  height: 60px; /* Larger */
+  flex-shrink: 0;
+}
+
+.cr-coordinates-point-card .cr-point-info {
+  flex: 1;
+}
+
+.cr-coordinates-point-card h3 {
+  font-size: 16px;
+  font-weight: 500; /* Medium weight */
+  margin-bottom: 5px;
+  letter-spacing: 0;
+}
+
+.cr-coordinates-point-card h4 {
+  font-size: 14px;
+  font-weight: 300; /* Thinner weight */
+  color: rgba(176, 179, 184, 0.8); /* More subtle color */
+}
+
+.cr-coordinates-point-card .cr-form-group {
+  margin-bottom: 15px;
+}
+
+.cr-coordinates-point-card .cr-action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.cr-cancel-btn {
+  background-color: rgba(46, 46, 46, 0.5); /* More subtle background */
+  color: #ffffff;
+  padding: 10px 16px;
+  border: 1px solid rgba(46, 46, 46, 0.7); /* Added border */
+  border-radius: 30px; /* Rounder corners */
+  font-size: 14px;
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  flex: 1;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cr-cancel-btn:hover {
+  background-color: rgba(46, 46, 46, 0.7);
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.cr-confirm-btn {
+  background-color: rgba(160, 160, 225, 0.2); /* More subtle background */
+  color: #ffffff;
+  padding: 10px 16px;
+  border: 1px solid #a0a0e1; /* Added border */
+  border-radius: 30px; /* Rounder corners */
+  font-size: 14px;
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  flex: 1;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cr-confirm-btn:hover {
+  background-color: rgba(160, 160, 225, 0.3);
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.cr-confirm-btn.disabled {
+  background-color: rgba(46, 46, 46, 0.3);
+  color: rgba(176, 179, 184, 0.5);
+  border-color: rgba(46, 46, 46, 0.5);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cr-map-container {
+  flex: 1;
+  background-color: rgba(31, 31, 37, 0.7); /* More subtle background */
+  border-radius: 16px; /* Slightly larger border radius */
+  overflow: hidden;
+  min-height: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#cr-map-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(176, 179, 184, 0.7); /* More subtle color */
+  font-size: 16px;
+  font-weight: 300; /* Thinner weight */
+  letter-spacing: 0.5px;
+}
+
+.cr-coordinates-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Increased gap */
+}
+
+.cr-previous-btn {
+  background-color: rgba(46, 46, 46, 0.5); /* More subtle background */
+  color: #ffffff;
+  padding: 12px;
+  border: 1px solid rgba(46, 46, 46, 0.7); /* Added border */
+  border-radius: 30px; /* Rounder corners */
+  font-size: 15px;
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cr-previous-btn:hover {
+  background-color: rgba(46, 46, 46, 0.7);
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.cr-save-preview-btn {
+  background-color: #a0a0e1;
+  color: #ffffff;
+  padding: 12px;
+  border: none;
+  border-radius: 30px; /* Rounder corners */
+  font-size: 15px;
+  font-weight: 500; /* Medium weight */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cr-save-preview-btn:hover {
+  background-color: #8f8fd1;
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+/* Step separators and section titles */
+.cr-route-points h2,
+.cr-route-coordinates h2 {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cr-page-header h1 {
+    font-size: 28px;
+  }
+
+  .cr-content-wrapper {
+    padding: 25px;
+  }
+
+  .cr-content-wrapper h2 {
+    font-size: 24px;
+  }
+
+  .cr-coordinates-content {
+    flex-direction: column;
+  }
+
+  .cr-points-list {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .cr-map-container {
+    min-height: 300px;
+  }
+
+  .cr-select-group {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cr-save-btn,
+  .cr-add-btn,
+  .cr-save-route-btn,
+  .cr-previous-btn,
+  .cr-save-preview-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

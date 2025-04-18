@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Explorer - Analytics</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/analytics.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Full-width header with fixed position -->
+  <header>
+    <div class="inner-container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="europe.html">
+            <img src="logo.png" alt="Travel Logo">
+          </a>
+        </div>
+        
+        <div class="search-filter-block">
+          <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search destinations...">
+            <button class="search-button">
+              <span class="icon-search"></span>
+            </button>
+          </div>
+          
+          <div class="filter-button">
+            <span class="icon-filter"></span>
+            <span>Фильтры</span>
+          </div>
+        </div>
+        
+        <div class="user-section">
+          <button class="user-button" id="userButton">
+            <div class="hamburger-icon">
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+            </div>
+            <div class="user-avatar">
+              <!-- Red circle avatar placeholder -->
+            </div>
+          </button>
+          
+          <div class="user-menu" id="userMenu">
+            <a class="menu-item" href="profile.html">Profile</a>
+            <div class="menu-item">Login and security</div>
+            <div class="menu-item">Settings</div>
+            
+            <div class="menu-divider"></div>
+            
+            <button class="create-route-btn">
+              <span class="icon-plus"></span>
+              <span>Create a route</span>
+            </button>
+            
+            <div class="menu-item">Your routes</div>
+            <div class="menu-item">Analytics</div>
+            <div class="menu-item">Payments</div>
+            <div class="menu-item">Sign out</div>
+            
+            <div class="social-links">
+              <div class="social-link"></div>
+              <div class="social-link"></div>
+              <div class="social-link"></div>
+              <div class="social-link"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main content with scrollable area -->
+  <div class="main-content">
+    <div class="inner-container">
+      <div class="page-header">
+        <h1>Analytics</h1>
+      </div>
+      <div class="analytics-content">
+        <div class="container">
+          <!-- Total Sale Card -->
+          <div class="sales-card">
+            <div class="title">Total Sale</div>
+            <div class="time-filter">
+              <button class="time-btn active">7 d</button>
+              <button class="time-btn">1 m</button>
+              <button class="time-btn">3 m</button>
+              <button class="time-btn">1 y</button>
+            </div>
+            <div class="sales-metric">
+              <span class="main-number">$1,992.34</span>
+              <span class="info">Your sales have surged by $733.12 from last month</span>
+            </div>
+            <div class="sales-sub-metrics">
+              <div class="sub-cell">
+                <span class="label">In-Stores Sales</span>
+                <span class="value">$5,045.00</span>
+                <span class="change positive">+1%</span>
+              </div>
+              <div class="sub-cell">
+                <span class="label">Online Sales</span>
+                <span class="value">$1,001.00</span>
+                <span class="change negative">-0.7%</span>
+              </div>
+              <div class="sub-cell">
+                <span class="label">Total Sales</span>
+                <span class="value">$6,460.00</span>
+                <span class="change neutral">+0%</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Usage Count Card -->
+          <div class="dashboard">
+            <div class="title">Usage Count</div>
+            <div class="chart-container">
+              <div class="donut"></div>
+              <div class="total-sales" id="totalSales">500</div>
+            </div>
+            <div class="details">
+              <div class="purchase-breakdown">
+                <div class="detail-item">
+                  <span class="dot blue-dot"></span>
+                  <div class="item-wrapper">
+                    <span class="amount" id="oneTimePurchases">315</span>
+                    <span class="one-time-label">One-Time Uses</span>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <span class="dot green-dot"></span>
+                  <div class="item-wrapper">
+                    <span class="amount" id="subscriptionUsage">185</span>
+                    <span class="subscription-label">Subscription Uses</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Author Routes Card -->
+          <div class="card">
+            <div class="title">Author Routes</div>
+            <div class="main-metric">
+              <span class="number">18</span>
+              <span class="label">Total Routes</span>
+            </div>
+            <div class="sub-metrics">
+              <div>
+                <span>Walking Routes</span>
+                <span class="value">12</span>
+              </div>
+              <div>
+                <span>Car Routes</span>
+                <span class="value">6</span>
+              </div>
+              <div>
+                <span>Guides</span>
+                <span class="value">2</span>
+              </div>
+              <div>
+                <span>Camper Routes</span>
+                <span class="value">1</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Partnership Level Card -->
+          <div class="partnership-card">
+            <div class="title">Partnership Level</div>
+            <div class="partnership-metric">
+              <span class="number">60%</span>
+              <span class="label">Current Level</span>
+            </div>
+            <div class="benefits">
+              <ul>
+                <li>Higher revenue share</li>
+                <li>Priority support</li>
+                <li>Featured routes</li>
+              </ul>
+            </div>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+          </div>
+          
+          <!-- Individual Route Analytics Section -->
+<!-- HTML for the Route Card Section -->
+<div class="route-analytics">
+    <div class="route-card">
+      <div class="route-info-container">
+        <div class="route-image">
+          <img src="images/berlin-wall.jpg" alt="Berlin Wall Kiss">
+        </div>
+        <div class="route-details">
+          <h3>Historical Landmarks and Iconic Sights of Berlin</h3>
+          <p>Germany (Berlin)</p>
+          <div class="time-filter">
+            <button class="time-btn active">7 d</button>
+            <button class="time-btn">1 m</button>
+            <button class="time-btn">3 m</button>
+            <button class="time-btn">1 y</button>
+          </div>
+        </div>
+      </div>
+      <div class="route-stats">
+        <div class="stat-item total-uses">
+          <div class="stat-circle">
+            <span>16</span>
+          </div>
+          <span class="stat-label">total uses</span>
+        </div>
+        <div class="stat-item one-time">
+          <div class="stat-circle blue-circle">
+            <div class="stat-circle-inner"></div>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">
+              <span class="blue-dot-small"></span>
+              <span>one-time sales</span>
+            </div>
+            <span class="stat-value">124.45$</span>
+          </div>
+        </div>
+        <div class="stat-item subscription">
+          <div class="stat-circle purple-circle">
+            <div class="stat-circle-inner"></div>
+          </div>
+          <div class="stat-info">
+            <div class="stat-label">
+              <span class="purple-dot-small"></span>
+              <span>subscription purchases</span>
+            </div>
+            <span class="stat-value">214.75$</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="scripts/user-menu.js"></script>
+  <script type="module" src="scripts/profile.js"></script>
+  <script>
+    // Usage data
+    const oneTimePurchases = 315;
+    const subscriptionUsage = 185;
+    const totalSales = oneTimePurchases + subscriptionUsage;
+
+    // Update page data
+    document.getElementById('totalSales').textContent = totalSales;
+    document.getElementById('oneTimePurchases').textContent = oneTimePurchases;
+    document.getElementById('subscriptionUsage').textContent = subscriptionUsage;
+    
+    // Time filter button functionality
+    const timeButtons = document.querySelectorAll('.time-btn');
+    timeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons in the same group
+        const parentDiv = this.parentElement;
+        parentDiv.querySelectorAll('.time-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+  <!-- Security scripts -->
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92f48d302ef032ec',t:'MTc0NDQ4MDA3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

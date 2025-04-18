@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Explorer - Verify Routes Access</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/verify-routes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Full-width header with fixed position -->
+  <header>
+    <div class="inner-container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="europe.html">
+            <img src="logo.png" alt="Travel Logo">
+          </a>
+        </div>
+        
+        <div class="search-filter-block">
+          <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search destinations...">
+            <button class="search-button">
+              <span class="icon-search"></span>
+            </button>
+          </div>
+          
+          <div class="filter-button">
+            <span class="icon-filter"></span>
+            <span>Фильтры</span>
+          </div>
+        </div>
+        
+        <div class="user-section">
+          <button class="user-button" id="userButton">
+            <div class="hamburger-icon">
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+            </div>
+            <div class="user-avatar">
+              <!-- Red circle avatar placeholder -->
+            </div>
+          </button>
+          
+          <div class="user-menu" id="userMenu"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Background elements -->
+  <div class="background-elements">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
+    <div class="bg-line bg-line-1"></div>
+    <div class="bg-line bg-line-2"></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <div class="verify-container">
+      <h1>Want to become an author?</h1>
+      <form class="verify-form">
+        <div class="form-section">
+          <h2>Personal Information</h2>
+          <div class="form-row">
+            <input type="text" placeholder="Name" required>
+            <input type="text" placeholder="Surname" required>
+          </div>
+          <input type="email" placeholder="Email" required>
+        </div>
+        
+        <div class="form-section">
+          <h2>Social Media</h2>
+          <input type="url" placeholder="Instagram (optional)" pattern="https?://.*">
+          <input type="url" placeholder="TikTok (optional)" pattern="https?://.*">
+          <input type="url" placeholder="YouTube (optional)" pattern="https?://.*">
+        </div>
+        
+        <div class="form-section">
+          <h2>About You</h2>
+          <textarea placeholder="Describe your travel experience" required></textarea>
+          <textarea placeholder="Why do you want to join TripTips?" required></textarea>
+        </div>
+        
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="scripts/user-menu.js"></script>
+  <script>
+    // Form submission
+    document.querySelector('.verify-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Обновляем currentUser в localStorage
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (currentUser) {
+        currentUser.hasSubmittedVerificationForm = true;
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+      }
+      alert('Request submitted! We will review your application.');
+      window.location.href = 'europe.html';
+    });
+  </script>
+</body>
+</html>

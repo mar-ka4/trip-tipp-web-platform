@@ -1,0 +1,100 @@
+<div class="filter-modal">
+  <div class="filter-header">
+    <h2>Фильтры</h2>
+    <button class="close-button" id="closeFilterBtn">&times;</button>
+  </div>
+  
+  <div class="filter-content">
+    <!-- Фильтр по типу маршрута -->
+    <div class="filter-section">
+      <h3>Тип маршрута</h3>
+      <div class="filter-buttons">
+        <button class="filter-button-option active" data-value="all">Все</button>
+        <button class="filter-button-option" data-value="пеший">Пеший</button>
+        <button class="filter-button-option" data-value="вело">Велосипедный</button>
+        <button class="filter-button-option" data-value="автодом">Автодом</button>
+        <button class="filter-button-option" data-value="поход">Поход</button>
+        <button class="filter-button-option" data-value="авто">Авто</button>
+      </div>
+    </div>
+    
+    <!-- Фильтр по длительности -->
+    <div class="filter-section">
+      <h3>Длительность</h3>
+      <div class="duration-filter">
+        <div class="range-slider">
+          <div class="range-slider-track"></div>
+          <div class="active-track"></div>
+          <input type="range" class="range-slider-min" min="0" max="24" value="0">
+          <input type="range" class="range-slider-max" min="0" max="24" value="24">
+        </div>
+        <div class="range-values">
+          <span class="range-value-min">0</span>
+          <span class="range-value-max">24</span>
+        </div>
+      </div>
+      <div class="duration-type-buttons">
+        <button class="duration-type-button active" data-type="hours">Часов</button>
+        <button class="duration-type-button" data-type="days">Суток</button>
+      </div>
+    </div>
+    
+    <!-- Фильтр по сложности -->
+    <div class="filter-section">
+      <h3>Сложность</h3>
+      <div class="filter-buttons">
+        <button class="filter-button-option active" data-value="all">Все</button>
+        <button class="filter-button-option" data-value="легкая">Легкая</button>
+        <button class="filter-button-option" data-value="средняя">Средняя</button>
+        <button class="filter-button-option" data-value="сложная">Сложная</button>
+      </div>
+    </div>
+    
+    <!-- Фильтр по количеству точек -->
+    <div class="filter-section">
+      <h3>Количество точек</h3>
+      <div class="points-filter">
+        <div class="range-slider">
+          <div class="range-slider-track"></div>
+          <input type="range" class="range-slider-min" min="1" max="20" value="1">
+          <input type="range" class="range-slider-max" min="1" max="20" value="20">
+        </div>
+        <div class="range-inputs">
+          <div class="input-wrapper">
+            <input type="number" class="range-input" id="pointsInputMin" min="1" max="20" value="1">
+          </div>
+          <div class="input-wrapper">
+            <input type="number" class="range-input" id="pointsInputMax" min="1" max="20" value="20">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Фильтр по цене -->
+    <div class="filter-section">
+      <h3>Цена</h3>
+      <div class="price-filter">
+        <div class="range-slider">
+          <div class="range-slider-track"></div>
+          <input type="range" class="range-slider-min" min="0" max="100" value="0">
+          <input type="range" class="range-slider-max" min="0" max="100" value="100">
+        </div>
+        <div class="range-inputs">
+          <div class="input-wrapper">
+            <input type="number" class="range-input" id="priceInputMin" min="0" max="100" value="0">
+            <span class="input-suffix">€</span>
+          </div>
+          <div class="input-wrapper">
+            <input type="number" class="range-input" id="priceInputMax" min="0" max="100" value="100">
+            <span class="input-suffix">€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="filter-footer">
+    <button class="clear-button" id="clearFiltersBtn">Очистить всё</button>
+    <button class="apply-button" id="applyFiltersBtn">Показать маршруты</button>
+  </div>
+</div>
