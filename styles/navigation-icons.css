@@ -1,0 +1,76 @@
+/* Navigation Icons Styles */
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+    color: #a7a7a7;
+    text-decoration: none;
+    padding: 10px 0px 0px 0px;
+    cursor: pointer;
+    transition: color 0.3s;
+    width: auto;
+  }
+  
+  .nav-item.active {
+    color: #fff;
+    border-bottom: 1px solid #ffffff;
+  }
+  
+  .nav-item.active .nav-icon svg {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+  
+  .nav-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; 
+    width: 25px; 
+  }
+  
+  .nav-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor; /* Use currentColor to match text color */
+    stroke: currentColor; /* Use currentColor to match text color */
+    transition: fill 0.3s, stroke 0.3s;
+  }
+  
+  .nav-item:hover {
+    color: #e9e9e9;
+  }
+  
+  .nav-item:hover .nav-icon svg {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+  
+  /* Specific icon styles for different regions */
+  .icon-europe {
+    /* Styles for Eiffel Tower icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon-scandinavia {
+    /* Styles for Mountain icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon-seas {
+    /* Placeholder for Sea Waves icon */
+  }
+  
+  .icon-asia {
+    /* Placeholder for Lantern icon */
+  }
+  
+  .icon-middle-east {
+    /* Placeholder for Mosque icon */
+  }
+  

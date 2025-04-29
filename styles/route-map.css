@@ -1,0 +1,467 @@
+/* Основные стили для страницы с маршрутом */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #121212;
+  color: #fff;
+}
+
+.route-map-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Стили для боковой панели */
+.sidebar {
+  width: 380px;
+  height: 100%;
+  background-color: #18191b;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.sidebar-header {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1e1f23;
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.route-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 2.6em;
+  
+}
+
+/* Стили для списка точек маршрута */
+.route-points-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.route-point-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.route-point-card:hover {
+  /* Убираем эффект поднятия и тени при наведении */
+}
+
+.route-point-card.active {
+  border: 2px solid #747bf1;
+}
+
+.point-number {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  background-color: #747bf1;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.point-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стили для галереи */
+.point-gallery {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-image.active {
+  opacity: 1;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s, background-color 0.3s;
+  z-index: 2;
+}
+
+.point-gallery:hover .gallery-nav {
+  opacity: 1;
+}
+
+.gallery-nav:hover {
+  background-color: rgba(116, 123, 241, 0.8);
+}
+
+.gallery-prev {
+  left: 10px;
+}
+
+.gallery-next {
+  right: 10px;
+}
+
+/* Заменим стили для точечных карточек */
+.point-image {
+  display: none; /* Скрываем старый элемент с изображением */
+}
+
+.point-details {
+  padding: 15px;
+}
+
+/* Улучшим стили для заголовка точки */
+.point-title {
+  font-size: 20px; /* Увеличиваем размер заголовка */
+  margin: 0 0 12px 0;
+  color: #fff;
+}
+
+/* Стили для описания с возможностью разворачивания */
+.point-description-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.point-description {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #b0b0b0;
+  margin: 0 0 5px 0;
+  transition: max-height 0.3s ease;
+}
+
+.point-description.collapsed {
+  max-height: 130px;
+  overflow: hidden;
+}
+
+.expand-button {
+  background: none;
+  border: none;
+  color: #747bf1;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 0;
+  text-align: left;
+  display: block;
+}
+
+.expand-button:hover {
+  text-decoration: underline;
+}
+
+/* Убираем метаданные точки */
+.point-meta {
+  display: none; /* Скрываем блок с метаданными */
+}
+
+/* Стили для области карты */
+.map-container {
+  flex: 1;
+  position: relative;
+  background-color: #121212;
+  overflow: hidden;
+}
+
+/* Стили для аватара автора на карте */
+.author-avatar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 100;
+  border: 1px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  position: relative;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.map-message {
+  text-align: center;
+  color: #b0b0b0;
+}
+
+.map-message i {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #747bf1;
+}
+
+.map-message p {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Стили для панели настроек карты */
+.map-settings {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+.settings-group {
+  position: relative;
+}
+
+.settings-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-button:hover {
+  background-color: #3a3a3a;
+}
+
+.settings-dropdown {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 180px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.settings-group:hover .settings-dropdown {
+  display: block;
+}
+
+.dropdown-option {
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.dropdown-option:hover {
+  background-color: #3a3a3a;
+}
+
+.dropdown-option input[type="radio"],
+.dropdown-option input[type="checkbox"] {
+  accent-color: #747bf1;
+}
+
+.dropdown-option label {
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dropdown-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-button:hover {
+  color: #747bf1;
+}
+
+/* Стили для скроллбара */
+.route-points-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.route-points-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.route-points-list::-webkit-scrollbar-thumb {
+  background-color: rgba(116, 123, 241, 0.3);
+  border-radius: 10px;
+}
+
+.route-points-list::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(116, 123, 241, 0.5);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .route-map-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 50%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .map-container {
+    height: 50%;
+  }
+
+  .map-settings {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .author-avatar {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-header {
+    padding: 15px;
+  }
+
+  .route-title {
+    font-size: 16px;
+  }
+
+  .point-image {
+    height: 120px;
+  }
+
+  .point-title {
+    font-size: 16px;
+  }
+
+  .point-description {
+    font-size: 13px;
+  }
+
+  .settings-button {
+    width: 36px;
+    height: 36px;
+  }
+}

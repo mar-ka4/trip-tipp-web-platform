@@ -9,8 +9,10 @@ function createCard(route, index) {
   const card = document.createElement("div")
   card.className = "card"
 
-  // Добавляем атрибуты для фильтрации
+  // Добавляем атрибуты для фильтрации и поиска
   card.setAttribute("data-type", route.type)
+  card.setAttribute("data-location", route.location)
+  card.setAttribute("data-name", route.name)
 
   // Извлекаем число из строки длительности (например, "3 часа" -> "3")
   const durationParts = route.duration.split(" ")
@@ -24,6 +26,17 @@ function createCard(route, index) {
   card.setAttribute("data-points", route.points)
   card.setAttribute("data-price", route.price || 0)
   card.setAttribute("data-subscription", route.subscription || false)
+
+  // Добавляем описание для поиска, если оно есть
+  if (route.description) {
+    card.setAttribute("data-description", route.description)
+  }
+
+  // Добавляем достопримечательности для поиска, если они есть
+  if (route.landmarks) {
+    const landmarkNames = route.landmarks.map((landmark) => landmark.name).join(", ")
+    card.setAttribute("data-landmarks", landmarkNames)
+  }
 
   const cardImage = document.createElement("div")
   cardImage.className = "card-image"
@@ -59,12 +72,16 @@ function createCard(route, index) {
       })
     }
 
-    arrowLeft.addEventListener("click", () => {
+    arrowLeft.addEventListener("click", (e) => {
+      e.preventDefault()
+      e.stopPropagation()
       currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages
       showImage(currentImageIndex)
     })
 
-    arrowRight.addEventListener("click", () => {
+    arrowRight.addEventListener("click", (e) => {
+      e.preventDefault()
+      e.stopPropagation()
       currentImageIndex = (currentImageIndex + 1) % totalImages
       showImage(currentImageIndex)
     })

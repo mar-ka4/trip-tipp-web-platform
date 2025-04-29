@@ -19,7 +19,7 @@ header {
   background-color: #0b0c0f;
   z-index: 100;
   padding: 10px 0;
-  border-bottom: 1px solid #2a2e35;
+  border-bottom: 1px solid #191a1f;
 }
 
 .inner-container {
@@ -51,7 +51,7 @@ header {
   width: 100%;
   background-color: #0b0c0f;
   z-index: 90;
-  border-bottom: 1px solid #2a2e35;
+  border-bottom: 1px solid #16181b;
 }
 
 .main-nav {
@@ -62,7 +62,7 @@ header {
 }
 
 .main-content {
-  margin-top: 150px;
+  margin-top: 100px;
   width: 100%;
   overflow: auto;
 }
@@ -74,6 +74,7 @@ header {
   justify-content: center;
   gap: 10px;
   margin: 0 20px;
+  padding-left: 80px;
 }
 
 .search-container {
@@ -174,9 +175,10 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: auto;
   color: #8a8d94;
   text-decoration: none;
-  padding: 15px 0px 3px 0px;
+ 
   cursor: pointer;
   transition: color 0.3s;
   gap: 5px;
@@ -208,15 +210,30 @@ header {
   display: block;
 }
 
+/* Updated menu item styles with increased gap and icon support */
 .menu-item {
   padding: 12px 0;
   color: #fff;
   cursor: pointer;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Increased gap between icon and text */
+  margin-bottom: 8px; /* Added space between menu items */
 }
 
 .menu-item:hover {
   color: #747bf1;
+}
+
+/* Style for menu icons */
+.menu-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a8d94;
 }
 
 .menu-divider {
@@ -225,6 +242,7 @@ header {
   margin: 10px 0;
 }
 
+/* Updated create route button with plus icon */
 .create-route-btn {
   display: flex;
   align-items: center;
@@ -238,10 +256,20 @@ header {
   cursor: pointer;
   gap: 10px;
   margin: 10px 0;
+  text-decoration: none; /* Remove underline */
 }
 
 .create-route-btn:hover {
   background-color: #3a3f4b;
+}
+
+/* Plus icon style */
+.icon-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
 }
 
 .sign-in-btn {
@@ -302,28 +330,39 @@ header {
   margin-left: 5px;
 }
 
+/* Updated social links with proper styling */
 .social-links {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 15px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .social-link {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-color: #3a3f4b;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.social-link:hover {
+  background-color: #4a4f5b;
 }
 
 .user-menu .menu-item a {
   color: inherit;
   text-decoration: none;
   display: block;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .user-menu .menu-item[href] {

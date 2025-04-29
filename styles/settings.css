@@ -1,0 +1,499 @@
+/* Основные стили для страницы настроек */
+.settings-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 0;
+  color: #fff;
+}
+
+.settings-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+/* Блоки настроек */
+.settings-block {
+  background-color: #141516;
+  border-radius: 12px;
+  padding: 30px; /* Increased from 25px */
+  margin-bottom: 40px; /* Increased from 30px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(160, 160, 225, 0.15);
+}
+
+.settings-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Заголовки секций */
+.settings-section-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px; /* Increased from 10px */
+  color: #fff;
+}
+
+.settings-block-description {
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.settings-section {
+  margin-bottom: 40px; /* Increased from 30px */
+  
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.settings-section:last-of-type {
+  border-bottom: none;
+}
+
+.settings-section-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px; /* Increased from 15px */
+  margin-top: 25px; /* Added top margin */
+  color: #fff;
+}
+
+.settings-description {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin-bottom: 15px;
+}
+
+.settings-note {
+  font-size: 12px;
+  color: #b0b0b0;
+  margin-top: 8px;
+}
+
+/* Опции настроек */
+.settings-option {
+  margin-bottom: 20px; /* Increased from 15px */
+}
+
+.settings-option label {
+  display: block;
+  margin-bottom: 8px;
+  color: #b0b0b0;
+}
+
+.settings-select {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 15px;
+  background-color: #141516;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23b0b0b0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+.settings-select:focus {
+  outline: none;
+  border-color: #747bf1;
+  box-shadow: 0 0 0 2px rgba(116, 123, 241, 0.2);
+}
+
+/* Чекбоксы */
+.checkbox-option {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-option label {
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+
+.settings-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #747bf1;
+}
+
+/* Кнопки */
+.settings-save-btn {
+  background-color: #747bf1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.settings-save-btn:hover {
+  background-color: #5f66d8;
+}
+
+.settings-action-btn {
+  background-color: #3a3a3a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.settings-action-btn:hover {
+  background-color: #4a4a4a;
+}
+
+.settings-action-btn.warning {
+  background-color: #e67e22;
+}
+
+.settings-action-btn.warning:hover {
+  background-color: #d35400;
+}
+
+.settings-action-btn.danger {
+  background-color: #e74c3c;
+}
+
+.settings-action-btn.danger:hover {
+  background-color: #c0392b;
+}
+
+/* Новые стили для опций с переключателями */
+.toggle-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.toggle-option:last-child {
+  border-bottom: none;
+}
+
+.toggle-option-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.toggle-option-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 5px 0;
+  color: #fff;
+}
+
+.toggle-option-description {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Стили для переключателей */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3a3a3a;
+  transition: .4s;
+  border-radius: 26px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #747bf1;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+/* Способы оплаты */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.payment-method {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141516;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.payment-method-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.payment-method-icon {
+  width: 40px;
+  height: 25px;
+  border-radius: 4px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-method-icon.visa {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="%230052A4" d="M45,35c0,2.209-1.791,4-4,4H7c-2.209,0-4-1.791-4-4V13c0-2.209,1.791-4,4-4h34c2.209,0,4,1.791,4,4V35z"/><path fill="%23FFFFFF" d="M15.186,19l-2.626,7.832c0,0-0.667-3.313-0.733-3.729c-1.495-3.411-3.701-3.221-3.701-3.221L10.726,30h3.457L18.7,19H15.186z"/><path fill="%23FFFFFF" d="M17.689,30h3.201l1.295-7.607h-3.252L17.689,30z"/><path fill="%23FFFFFF" d="M24.233,22.209c1.607,0,2.354,0.333,2.354,0.333l0.282-2.616c0,0-1.313-0.372-2.994-0.372c-1.681,0-5.308,0.729-5.308,4.321c0,3.373,4.391,3.418,4.391,5.193c0,1.775-3.932,1.459-5.233,0.417l-0.326,2.701c0,0,1.417,0.667,3.585,0.667c2.167,0,5.501-1.123,5.501-4.188c0-3.183-4.459-3.481-4.459-5.124C22.026,22.457,23.014,22.209,24.233,22.209z"/><path fill="%23FFFFFF" d="M40,24.605c0,0-0.38-1.924-1.537-1.924c-1.157,0-3.714,0-3.714,0l-0.055,0.063c0,0,2.901,2.449,2.901,5.381c0,2.933-1.759,3.943-1.759,3.943h3.423c0,0,2.209-1.539,2.209-5.381C41.468,23.226,40,24.605,40,24.605z"/><path fill="%23FFFFFF" d="M39.76,19C39.76,19,26.214,19,26,19c-1.5,0-1.5,1.5-1.5,1.5l3.622,0c0,0-2.172,2.136-2.172,5.5c0,3.364,2.271,5.5,2.271,5.5l-3.459,0c0,0,0.5,1.5,2,1.5c0.059,0,12.5,0,12.5,0S39.76,19,39.76,19z"/></svg>');
+}
+
+.payment-method-icon.mastercard {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="%23FF5F00" d="M16,24c0,4.418,2.014,8.36,5.174,10.955C23.492,36.915,26.55,38,30,38s6.508-1.085,8.826-3.045C41.986,32.36,44,28.418,44,24s-2.014-8.36-5.174-10.955C36.508,11.085,33.45,10,30,10s-6.508,1.085-8.826,3.045C18.014,15.64,16,19.582,16,24z"/><path fill="%23EB001B" d="M16,24c0-4.418,2.014-8.36,5.174-10.955C23.492,11.085,26.55,10,30,10V38c-3.45,0-6.508-1.085-8.826-3.045C18.014,32.36,16,28.418,16,24z"/><path fill="%23F79E1B" d="M44,24c0,4.418-2.014,8.36-5.174-10.955C36.508,36.915,33.45,38,30,38V10c3.45,0,6.508,1.085,8.826,3.045C41.986,15.64,44,19.582,44,24z"/></svg>');
+}
+
+.payment-method-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-method-name {
+  font-size: 14px;
+  color: #fff;
+}
+
+.payment-method-expiry {
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+.payment-method-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.payment-method-edit,
+.payment-method-delete {
+  background: none;
+  border: none;
+  color: #b0b0b0;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.payment-method-edit:hover {
+  color: #747bf1;
+}
+
+.payment-method-delete:hover {
+  color: #e74c3c;
+}
+
+.add-payment-method-btn {
+  background-color: transparent;
+  border: 1px dashed #747bf1;
+  border-radius: 8px;
+  color: #747bf1;
+  padding: 12px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.add-payment-method-btn:hover {
+  background-color: rgba(116, 123, 241, 0.1);
+}
+
+/* Платежный адрес */
+.billing-address {
+  background-color: #141516;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.address-preview {
+  margin-bottom: 15px;
+}
+
+.address-preview p {
+  margin: 5px 0;
+  color: #b0b0b0;
+}
+
+.edit-address-btn {
+  background: none;
+  border: 1px solid #747bf1;
+  border-radius: 6px;
+  color: #747bf1;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.edit-address-btn:hover {
+  background-color: rgba(116, 123, 241, 0.1);
+}
+
+/* История платежей */
+.payment-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.payment-history-table th,
+.payment-history-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.payment-history-table th {
+  color: #b0b0b0;
+  font-weight: normal;
+}
+
+.payment-history-table td {
+  color: #fff;
+}
+
+.status-success {
+  color: #2ecc71 !important;
+}
+
+.status-pending {
+  color: #f39c12 !important;
+}
+
+.status-failed {
+  color: #e74c3c !important;
+}
+
+.view-all-payments-btn {
+  background: none;
+  border: none;
+  color: #747bf1;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+}
+
+.view-all-payments-btn:hover {
+  text-decoration: underline;
+}
+
+/* Theme Toggle Buttons */
+.theme-toggle-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 30px; /* Increased from 20px */
+  margin-top: 15px; /* Added top margin */
+}
+
+.theme-toggle-btn {
+  background-color: #2a2a2a;
+  color: #b0b0b0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #3a3a3a;
+}
+
+.theme-toggle-btn.active {
+  background-color: #747bf1;
+  color: white;
+}
+
+.theme-toggle-btn i {
+  font-size: 16px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 20px 15px;
+  }
+
+  .payment-method {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .payment-method-actions {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .payment-history-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .toggle-option {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggle-option-content {
+    padding-right: 0;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .toggle-switch {
+    align-self: flex-end;
+    margin-top: -40px;
+  }
+}

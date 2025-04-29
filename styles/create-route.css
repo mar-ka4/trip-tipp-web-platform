@@ -1,667 +1,963 @@
-/* Create Route Page Styles with cr- prefix to avoid conflicts */
-
-/* Import Google Fonts for more modern typography */
+/* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 
-/* Adjust main content margin for no navigation bar */
-.main-content {
-  margin-top: 80px !important; /* Override the default margin that accounts for navigation */
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Global typography updates for the create route page */
-.cr-content-wrapper,
-.cr-content-wrapper * {
-  font-family: "Inter", sans-serif;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* Page header styling */
-.cr-page-header {
+/* Main Content Styles */
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
-  max-width: 800px;
-  margin: 0 auto 40px; /* Increased bottom margin */
 }
 
-.cr-page-header h1 {
-  font-size: 36px; /* Larger font size */
-  margin: 0;
-  font-weight: 300; /* Thinner font weight */
-  letter-spacing: -0.5px; /* Tighter letter spacing for modern look */
+.page-header h1 {
+  font-size: 1.875rem;
+  font-weight: 300;
+  letter-spacing: -0.025em;
 }
 
-/* Route creator content */
-.cr-content-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 10px; /* Increased padding */
-  background-color: #05050700;
-  border-radius: 20px; /* Slightly larger border radius */
-  margin-bottom: 50px; /* Increased bottom margin */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+/* Progress Steps - Now at the right side of the header */
+.route-progress-steps {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  /* Removed background-color and border */
 }
 
-.cr-content-wrapper h2 {
-  font-size: 28px; /* Larger font size */
-  font-weight: 300; /* Thinner font weight */
-  margin-bottom: 20px; /* Increased margin */
-  color: #fff;
-  letter-spacing: -0.5px;
+.route-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
-.cr-hint {
-  font-size: 15px;
-  color: #a0a0e1;
-  margin-bottom: 40px; /* Increased margin */
+.route-step-number {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background-color: #374151;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.route-step-label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.route-step.active .route-step-number {
+  background-color: #747bf1;
+  color: #ffffff;
+}
+
+.route-step.active .route-step-label {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.route-step-line {
+  height: 2px;
+  width: 2rem;
+  background-color: #374151;
+  margin: 0 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.route-step.active + .route-step-line {
+  background-color: #747bf1;
+}
+
+/* Card Styles */
+.route-card {
+  background-color: #141516;
+  border-radius: 0.75rem;
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.267);
+  margin-bottom: 1.5rem;
+}
+
+.route-card-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+.route-card-header h2 {
+  font-size: 1.25rem;
   font-weight: 300;
 }
 
-/* Form styling */
-.cr-form-group {
-  margin-bottom: 40px; /* Increased margin between form groups */
+/* Form Styles */
+.route-form-group {
+  margin-bottom: 1.65rem;
 }
 
-.cr-form-group label {
-  display: block;
-  font-size: 15px;
-  font-weight: 500; /* Medium weight */
-  margin-bottom: 12px; /* Increased margin */
-  color: #b0b3b8;
-  letter-spacing: 0.2px;
-}
-
-.cr-form-group input,
-.cr-form-group textarea {
-  width: 100%;
-  padding: 14px; /* Increased padding */
-  background-color: rgba(0, 0, 0, 0.2); /* More subtle background */
-  border: 1px solid #2e2e2e;
-  border-radius: 12px; /* Slightly larger border radius */
-  color: #ffffff;
-  font-size: 15px;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* More subtle shadow */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cr-form-group input:focus,
-.cr-form-group textarea:focus {
-  outline: none;
-  border-color: #a0a0e1;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 5px rgba(160, 160, 225, 0.2);
-}
-
-/* Выделяющая обводка только для поля названия маршрута в первом шаге */
-#cr-route-form .cr-form-group input {
-  border-color: #a0a0e1;
-}
-
-.cr-form-group textarea {
-  resize: vertical;
-  min-height: 120px; /* Ensure textarea has good height */
-  line-height: 1.5; /* Improved line height for readability */
-}
-
-/* Выпадающие списки */
-.cr-form-group select {
-  width: 100%;
-  padding: 14px; /* Increased padding */
-  background-color: rgba(40, 40, 51, 0.7); /* More subtle background */
-  border: 1px solid #2e2e2e;
-  border-radius: 12px; /* Slightly larger border radius */
-  color: #ffffff;
-  font-size: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* More subtle shadow */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  appearance: none; /* Remove default appearance */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a0a0e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 16px;
-  padding-right: 40px; /* Space for the custom arrow */
-}
-
-.cr-form-group select:focus {
-  outline: none;
-  border-color: #a0a0e1;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 5px rgba(160, 160, 225, 0.2);
-}
-
-/* Select group */
-.cr-select-group {
+.route-form-row {
   display: flex;
-  gap: 30px; /* Increased gap */
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.cr-select-wrapper {
+.route-form-group.half {
   flex: 1;
 }
 
-/* Photo upload */
-.cr-photo-upload {
-  display: flex;
-  gap: 15px; /* Increased gap */
-  flex-wrap: wrap;
-  margin-bottom: 15px;
+.route-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #f3f4f6;
+  margin-bottom: 0.5rem;
 }
 
-.cr-photo-placeholder {
-  width: 90px; /* Slightly larger */
-  height: 90px; /* Slightly larger */
+.route-required {
+  color: #747bf1;
+}
+
+.route-input,
+.route-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #4b5563;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+}
+
+.route-input:focus,
+.route-textarea:focus {
+  outline: none;
+  border-color: #747bf1;
+}
+
+.route-textarea {
+  resize: vertical;
+}
+
+/* Search Input */
+.route-search-input {
+  position: relative;
+}
+
+.route-search-input i {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.route-search-input input {
+  padding-left: 2.5rem;
+}
+
+/* Button Styles */
+.route-primary-btn,
+.route-secondary-btn,
+.route-outline-btn,
+.route-toggle-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.route-primary-btn {
+  background-color: #747bf1;
+  color: #ffffff;
+}
+
+.route-primary-btn:hover {
+  background-color: #5f66d8;
+  transform: translateY(-2px);
+}
+
+.route-secondary-btn {
+  background-color: rgba(116, 123, 241, 0.2);
+  color: #ffffff;
+  border: 1px solid #747bf1;
+}
+
+.route-secondary-btn:hover {
+  background-color: rgba(116, 123, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+.route-outline-btn {
   background-color: transparent;
-  border: 2px dashed rgba(176, 179, 184, 0.5); /* More subtle border */
-  border-radius: 12px; /* Slightly larger border radius */
+  color: #ffffff;
+  border: 1px solid #4b5563;
+}
+
+.route-outline-btn:hover {
+  background-color: rgba(75, 85, 99, 0.2);
+  transform: translateY(-2px);
+}
+
+.route-toggle-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #4b5563;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.route-toggle-btn.active {
+  background-color: #747bf1;
+  border-color: #747bf1;
+}
+
+.route-difficulty-btn.active[data-value="easy"] {
+  background-color: #10b981;
+  border-color: #10b981;
+}
+
+.route-difficulty-btn.active[data-value="medium"] {
+  background-color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.route-difficulty-btn.active[data-value="hard"] {
+  background-color: #ef4444;
+  border-color: #ef4444;
+}
+
+.route-button-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.route-form-actions {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.route-spacer {
+  flex: 1;
+}
+
+/* Photo Gallery Styles - Updated with circular + button */
+.route-photo-gallery {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Update the add photo circle to make it smaller and lighter */
+.route-add-photo-circle {
+  width: 2.5rem; /* Reduced from 3rem */
+  height: 2.5rem; /* Reduced from 3rem */
+  border-radius: 50%;
+  background-color: rgba(30, 30, 30, 0.2); /* Lighter background */
+  border: 2px solid #5a5a5a; /* Lighter border color */
+  color: #b8b8b8; /* Lighter text color */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #b0b3b8;
-  position: relative;
   cursor: pointer;
-  transition: border-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.2s;
+  flex-shrink: 0;
 }
 
-.cr-photo-placeholder:hover {
-  border-color: #a0a0e1;
-  transform: translateY(-2px); /* Subtle lift effect on hover */
+.route-add-photo-circle:hover {
+  border-color: #747bf1;
+  color: #747bf1;
+  transform: scale(1.05);
 }
 
-.cr-photo-placeholder.cr-preview-photo {
-  border: 2px solid #a0a0e1;
+.route-add-photo-circle i {
+  font-size: 1rem; /* Reduced from 1.25rem */
 }
 
-.cr-photo-placeholder i {
-  font-size: 24px; /* Larger icon */
-  opacity: 0.7; /* More subtle */
+.route-photo-cells {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  flex-grow: 1;
 }
 
-.cr-photo-placeholder img {
+.route-photo-cell {
+  width: 180px;
+  height: 120px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid #4b5563;
+}
+
+.route-photo-cell.empty {
+  border: 1px solid #4b5563;
+}
+
+.route-photo-cell img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-.cr-remove-photo-btn {
+.route-remove-photo-btn {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: rgba(255, 77, 77, 0.9); /* Slightly transparent */
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
   border: none;
-  border-radius: 50%;
-  width: 26px; /* Slightly larger */
-  height: 26px; /* Slightly larger */
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
-.cr-remove-photo-btn i {
+.route-photo-cell:hover .route-remove-photo-btn {
+  opacity: 1;
+}
+
+/* Custom scrollbar for photo cells */
+.route-photo-cells::-webkit-scrollbar {
+  height: 6px;
+}
+
+.route-photo-cells::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.route-photo-cells::-webkit-scrollbar-thumb {
+  background: rgba(116, 123, 241, 0.15);
+  border-radius: 10px;
+}
+
+.route-photo-cells::-webkit-scrollbar-thumb:hover {
+  background: rgba(116, 123, 241, 0.25);
+}
+
+/* Duration Input */
+.route-duration-input {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.route-duration-number {
+  width: 100%;
+  max-width: 10rem;
+}
+
+/* Route Type Buttons */
+.route-type-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.55rem;
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-top: 0.5rem;
+}
+
+.route-type-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #4b5563;
+  border-radius: 0.5rem;
   color: #ffffff;
-  font-size: 12px;
-  opacity: 1; /* Full opacity for the icon */
-}
-
-.cr-remove-photo-btn:hover {
-  background-color: #e04343;
-  transform: scale(1.1); /* Slight scale effect on hover */
-}
-
-.cr-add-photo-wrapper {
-  margin-top: 15px;
-}
-
-.cr-add-photo-btn {
-  background-color: rgba(160, 160, 225, 0.2); /* More subtle background */
-  color: #ffffff;
-  padding: 10px 20px;
-  border: 1px solid #a0a0e1; /* Added border */
-  border-radius: 30px; /* Rounder corners */
-  font-size: 15px;
-  font-weight: 500; /* Medium weight */
+  font-size: 0.875rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.2s;
 }
 
-.cr-add-photo-btn:hover {
-  background-color: rgba(160, 160, 225, 0.3);
-  transform: translateY(-2px); /* Subtle lift effect on hover */
+.route-type-btn i {
+  margin-right: 0.5rem;
 }
 
-.cr-add-photo-btn:disabled {
-  background-color: rgba(46, 46, 46, 0.5);
-  color: rgba(176, 179, 184, 0.5);
-  border-color: transparent;
-  cursor: not-allowed;
+.route-type-btn:hover {
+  background-color: rgba(75, 85, 99, 0.3);
+  transform: translateY(-2px);
 }
 
-/* Save button */
-.cr-save-btn {
-  background-color: #a0a0e1;
-  color: #ffffff;
-  padding: 14px 28px; /* Larger padding */
-  border: none;
-  border-radius: 30px; /* Rounder corners */
-  font-size: 16px; /* Larger font */
-  font-weight: 500; /* Medium weight */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 20px; /* Added margin */
+.route-type-btn.active {
+  background-color: #747bf1;
+  border-color: #747bf1;
 }
 
-.cr-save-btn:hover {
-  background-color: #8f8fd1;
-  transform: translateY(-2px); /* Subtle lift effect on hover */
-}
-
-/* Route points */
-.cr-route-points {
-  margin-top: 60px; /* Increased margin */
-  border-top: 1px solid rgba(46, 46, 46, 0.5); /* Subtle separator */
-  padding-top: 40px; /* Padding after separator */
-}
-
-/* Step inactive state for blurred steps */
-.cr-step-inactive {
-  filter: blur(3px);
-  pointer-events: none;
-  opacity: 0.7;
+/* Add styles for the toggle switch */
+.route-switch {
   position: relative;
-  transition: filter 0.5s ease, opacity 0.5s ease;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-.cr-step-inactive::before {
-  content: "";
+.route-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.route-switch-slider {
   position: absolute;
+  cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
+  background-color: #374151;
+  transition: .4s;
+  border-radius: 34px;
 }
 
-.cr-point-card {
-  background-color: rgba(31, 31, 37, 0.7); /* More subtle background */
-  padding: 25px; /* Increased padding */
-  border-radius: 16px; /* Slightly larger border radius */
-  margin-bottom: 25px; /* Increased margin */
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cr-point-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.cr-point-card h3 {
-  font-size: 20px; /* Larger font */
-  font-weight: 300; /* Thinner weight */
-  margin-bottom: 20px; /* Increased margin */
-  color: #ffffff;
-  letter-spacing: -0.5px;
-}
-
-.cr-remove-btn {
+.route-switch-slider:before {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  transition: transform 0.2s ease;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
 }
 
-.cr-remove-btn i {
-  color: rgba(255, 77, 77, 0.8); /* Slightly transparent */
-  font-size: 20px; /* Larger icon */
-  transition: color 0.3s;
+.route-switch input:checked + .route-switch-slider {
+  background-color: #747bf1;
 }
 
-.cr-remove-btn:hover {
-  transform: scale(1.1); /* Slight scale effect on hover */
+.route-switch input:checked + .route-switch-slider:before {
+  transform: translateX(20px);
 }
 
-.cr-remove-btn:hover i {
-  color: #e04343;
-}
-
-.cr-add-btn {
-  background-color: rgba(160, 160, 225, 0.2); /* More subtle background */
-  color: #ffffff;
-  padding: 12px 24px; /* Increased padding */
-  border: 1px solid #a0a0e1; /* Added border */
-  border-radius: 30px; /* Rounder corners */
-  font-size: 16px; /* Larger font */
-  font-weight: 500; /* Medium weight */
-  cursor: pointer;
-  margin-right: 15px; /* Increased margin */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.cr-add-btn:hover {
-  background-color: rgba(160, 160, 225, 0.3);
-  transform: translateY(-2px); /* Subtle lift effect on hover */
-}
-
-.cr-save-route-btn {
-  background-color: rgba(176, 179, 184, 0.2); /* More subtle background */
-  color: #ffffff;
-  padding: 12px 24px; /* Increased padding */
-  border: 1px solid #b0b3b8; /* Added border */
-  border-radius: 30px; /* Rounder corners */
-  font-size: 16px; /* Larger font */
-  font-weight: 500; /* Medium weight */
-  cursor: not-allowed;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.cr-save-route-btn.active {
-  background-color: #a0a0e1;
-  border-color: #a0a0e1;
-  cursor: pointer;
-}
-
-.cr-save-route-btn.active:hover {
-  background-color: #8f8fd1;
-  transform: translateY(-2px); /* Subtle lift effect on hover */
-}
-
-.cr-save-route-btn.disabled {
-  background-color: rgba(46, 46, 46, 0.3);
-  color: rgba(176, 179, 184, 0.5);
-  border-color: rgba(46, 46, 46, 0.5);
-  cursor: not-allowed;
-}
-
-/* Route coordinates */
-.cr-route-coordinates {
-  margin-top: 60px; /* Increased margin */
-  border-top: 1px solid rgba(46, 46, 46, 0.5); /* Subtle separator */
-  padding-top: 40px; /* Padding after separator */
-}
-
-.cr-coordinates-content {
+/* Auto duration styles */
+.route-auto-duration {
   display: flex;
-  gap: 30px; /* Increased gap */
+  align-items: center;
+  margin-top: 0.75rem;
 }
 
-.cr-points-list {
-  width: 320px; /* Slightly wider */
-  background-color: rgba(31, 31, 37, 0.7); /* More subtle background */
-  border-radius: 16px; /* Slightly larger border radius */
-  padding: 20px; /* Increased padding */
+.route-auto-duration-label {
+  font-size: 0.875rem;
+  color: #f3f4f6;
+}
+
+/* Subscription toggle styles */
+.route-subscription-toggle {
   display: flex;
-  flex-direction: column;
-  max-height: 600px;
+  align-items: center;
+  margin-top: 0.5rem;
 }
 
-.cr-search-bar {
+.route-subscription-label {
+  font-size: 0.875rem;
+  color: #f3f4f6;
+}
+
+/* Step Content */
+.route-step-content {
+  display: block;
+}
+
+.route-step-content.hidden {
+  display: none;
+}
+
+.route-step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.route-step-header h2 {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.route-hint {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+/* Multi-currency styles */
+.route-multi-currency-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.route-currency-input {
   position: relative;
-  margin-bottom: 20px; /* Increased margin */
 }
 
-.cr-search-bar input {
-  width: 100%;
-  padding: 12px 40px 12px 15px; /* Adjusted padding */
-  background-color: rgba(40, 40, 51, 0.5); /* More subtle background */
-  border: 1px solid rgba(46, 46, 46, 0.7);
-  border-radius: 30px; /* Rounder corners */
-  color: #ffffff;
-  font-size: 15px;
-}
-
-.cr-search-bar i {
+.currency-symbol {
   position: absolute;
-  right: 15px;
+  left: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(176, 179, 184, 0.7); /* More subtle color */
-  font-size: 16px; /* Larger icon */
+  color: #9ca3af;
 }
 
-#cr-coordinates-points-container {
-  flex: 1;
-  overflow-y: auto;
-  margin-bottom: 20px; /* Increased margin */
-  padding-right: 5px; /* Space for scrollbar */
+.route-currency-input input {
+  padding-left: 2rem;
 }
 
-/* Custom scrollbar for the points container */
-#cr-coordinates-points-container::-webkit-scrollbar {
-  width: 4px;
+/* Point Card Styles */
+.route-point-card {
+  background-color: #141516;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  /* Removed transform and box-shadow transitions */
+  border: 1px solid rgba(75, 85, 99, 0.3);
 }
 
-#cr-coordinates-points-container::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+.route-point-card:hover {
+  /* Removed transform and box-shadow effects */
 }
 
-#cr-coordinates-points-container::-webkit-scrollbar-thumb {
-  background: rgba(160, 160, 225, 0.3);
-  border-radius: 10px;
-}
-
-#cr-coordinates-points-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(160, 160, 225, 0.5);
-}
-
-.cr-coordinates-point-card {
-  background-color: rgba(40, 40, 51, 0.5); /* More subtle background */
-  padding: 15px; /* Increased padding */
-  border-radius: 12px; /* Slightly larger border radius */
-  margin-bottom: 15px; /* Increased margin */
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  border: 1px solid transparent;
-}
-
-.cr-coordinates-point-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.cr-coordinates-point-card.active {
-  border: 1px solid #a0a0e1;
-  background-color: rgba(40, 40, 51, 0.8); /* Slightly darker when active */
-}
-
-.cr-coordinates-point-card .cr-point-header {
+.route-point-header {
   display: flex;
-  gap: 15px; /* Increased gap */
-  margin-bottom: 15px; /* Increased margin */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.cr-coordinates-point-card .cr-photo-placeholder {
-  width: 60px; /* Larger */
-  height: 60px; /* Larger */
-  flex-shrink: 0;
+.route-point-header h3 {
+  font-size: 1.125rem;
+  font-weight: 300;
 }
 
-.cr-coordinates-point-card .cr-point-info {
-  flex: 1;
+.route-remove-point-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  transition: all 0.2s;
 }
 
-.cr-coordinates-point-card h3 {
-  font-size: 16px;
-  font-weight: 500; /* Medium weight */
-  margin-bottom: 5px;
-  letter-spacing: 0;
+.route-remove-point-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  transform: scale(1.1);
 }
 
-.cr-coordinates-point-card h4 {
-  font-size: 14px;
-  font-weight: 300; /* Thinner weight */
-  color: rgba(176, 179, 184, 0.8); /* More subtle color */
-}
-
-.cr-coordinates-point-card .cr-form-group {
-  margin-bottom: 15px;
-}
-
-.cr-coordinates-point-card .cr-action-buttons {
+/* Point Images */
+.route-point-images-container {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
 }
 
-.cr-cancel-btn {
-  background-color: rgba(46, 46, 46, 0.5); /* More subtle background */
-  color: #ffffff;
-  padding: 10px 16px;
-  border: 1px solid rgba(46, 46, 46, 0.7); /* Added border */
-  border-radius: 30px; /* Rounder corners */
-  font-size: 14px;
-  font-weight: 500; /* Medium weight */
-  cursor: pointer;
-  flex: 1;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.route-point-images-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.cr-cancel-btn:hover {
-  background-color: rgba(46, 46, 46, 0.7);
-  transform: translateY(-2px); /* Subtle lift effect on hover */
-}
-
-.cr-confirm-btn {
-  background-color: rgba(160, 160, 225, 0.2); /* More subtle background */
-  color: #ffffff;
-  padding: 10px 16px;
-  border: 1px solid #a0a0e1; /* Added border */
-  border-radius: 30px; /* Rounder corners */
-  font-size: 14px;
-  font-weight: 500; /* Medium weight */
-  cursor: pointer;
-  flex: 1;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.cr-confirm-btn:hover {
-  background-color: rgba(160, 160, 225, 0.3);
-  transform: translateY(-2px); /* Subtle lift effect on hover */
-}
-
-.cr-confirm-btn.disabled {
-  background-color: rgba(46, 46, 46, 0.3);
-  color: rgba(176, 179, 184, 0.5);
-  border-color: rgba(46, 46, 46, 0.5);
-  cursor: not-allowed;
-  transform: none;
-}
-
-.cr-map-container {
-  flex: 1;
-  background-color: rgba(31, 31, 37, 0.7); /* More subtle background */
-  border-radius: 16px; /* Slightly larger border radius */
+.route-point-image-preview {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.375rem;
   overflow: hidden;
-  min-height: 600px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: relative;
 }
 
-#cr-map-placeholder {
+.route-point-image-preview img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+.route-remove-point-image-btn {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  border: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(176, 179, 184, 0.7); /* More subtle color */
-  font-size: 16px;
-  font-weight: 300; /* Thinner weight */
-  letter-spacing: 0.5px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
-.cr-coordinates-footer {
-  margin-top: auto;
+.route-point-image-preview:hover .route-remove-point-image-btn {
+  opacity: 1;
+}
+
+.route-add-point-image-btn {
+  width: 4rem;
+  height: 4rem;
+  border: 2px dashed #4b5563;
+  border-radius: 0.375rem;
+  background: none;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.route-add-point-image-btn:hover {
+  border-color: #747bf1;
+  color: #747bf1;
+}
+
+/* Coordinates Layout */
+.route-coordinates-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Move search to map container */
+.route-map-container {
+  background-color: #141516;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  height: 600px;
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  position: relative; /* Added for absolute positioning of search */
+}
+
+.route-map-search-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 300px;
+  z-index: 10;
+}
+
+.route-map-placeholder {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Increased gap */
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
 }
 
-.cr-previous-btn {
-  background-color: rgba(46, 46, 46, 0.5); /* More subtle background */
+.route-map-placeholder i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #747bf1;
+  opacity: 0.5;
+}
+
+.route-map-point-name {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.route-points-sidebar {
+  background-color: #141516;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+.route-points-sidebar .route-search-container {
+  display: none; /* Hide the original search in sidebar */
+}
+
+.route-search-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.route-search-container i {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.route-search-container input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #4b5563;
+  border-radius: 9999px;
   color: #ffffff;
-  padding: 12px;
-  border: 1px solid rgba(46, 46, 46, 0.7); /* Added border */
-  border-radius: 30px; /* Rounder corners */
-  font-size: 15px;
-  font-weight: 500; /* Medium weight */
+}
+
+.route-points-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+/* Custom Scrollbar */
+.route-points-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.route-points-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.route-points-list::-webkit-scrollbar-thumb {
+  background: rgba(116, 123, 241, 0.15);
+  border-radius: 10px;
+}
+
+.route-points-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(116, 123, 241, 0.25);
+}
+
+/* Coordinate Card */
+.route-coordinate-card {
+  background-color: #141516;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #4b5563;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Removed transition */
 }
 
-.cr-previous-btn:hover {
-  background-color: rgba(46, 46, 46, 0.7);
-  transform: translateY(-2px); /* Subtle lift effect on hover */
+.route-coordinate-card:hover {
+  /* Removed transform and box-shadow effects */
 }
 
-.cr-save-preview-btn {
-  background-color: #a0a0e1;
+.route-coordinate-card.active {
+  border-color: #747bf1;
+  background-color: rgba(116, 123, 241, 0.1);
+}
+
+.route-coordinate-card.confirmed {
+  border-color: #10b981;
+}
+
+.route-coordinate-card-header {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.route-point-image-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.route-point-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+}
+
+.route-point-info {
+  flex: 1;
+}
+
+.route-point-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.route-point-name-label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.route-coordinate-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.route-coordinate-input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #4b5563;
+  border-radius: 0.375rem;
   color: #ffffff;
-  padding: 12px;
+  font-size: 0.875rem;
+}
+
+.route-coordinate-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.route-reset-btn,
+.route-confirm-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
   border: none;
-  border-radius: 30px; /* Rounder corners */
-  font-size: 15px;
-  font-weight: 500; /* Medium weight */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.cr-save-preview-btn:hover {
-  background-color: #8f8fd1;
-  transform: translateY(-2px); /* Subtle lift effect on hover */
+.route-reset-btn {
+  background-color: rgba(75, 85, 99, 0.5);
+  color: #ffffff;
+  border: 1px solid #4b5563;
 }
 
-/* Step separators and section titles */
-.cr-route-points h2,
-.cr-route-coordinates h2 {
-  font-size: 28px;
-  font-weight: 300;
-  margin-bottom: 30px;
-  color: #fff;
-  letter-spacing: -0.5px;
+.route-reset-btn:hover {
+  background-color: rgba(75, 85, 99, 0.7);
 }
 
-/* Responsive adjustments */
+.route-confirm-btn {
+  background-color: rgba(116, 123, 241, 0.2);
+  color: #ffffff;
+  border: 1px solid #747bf1;
+}
+
+.route-confirm-btn:hover {
+  background-color: rgba(116, 123, 241, 0.3);
+}
+
+.route-coordinate-card.confirmed .route-coordinate-input {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+  color: #d1fae5;
+}
+
+.route-coordinate-card.confirmed .route-reset-btn {
+  opacity: 1;
+}
+
+.route-coordinate-card.confirmed .route-confirm-btn {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Disabled state for buttons */
+.route-toggle-btn.disabled,
+.route-primary-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .cr-page-header h1 {
-    font-size: 28px;
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 
-  .cr-content-wrapper {
-    padding: 25px;
+  .route-progress-steps {
+    width: 100%;
   }
 
-  .cr-content-wrapper h2 {
-    font-size: 24px;
+  .route-form-row {
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .cr-coordinates-content {
+  .route-coordinates-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .route-map-container {
+    order: 2;
+    height: 400px;
+  }
+
+  .route-points-sidebar {
+    order: 1;
+    height: auto;
+    max-height: 400px;
+  }
+
+  .route-type-buttons {
     flex-direction: column;
   }
 
-  .cr-points-list {
-    width: 100%;
-    max-height: 300px;
-  }
-
-  .cr-map-container {
-    min-height: 300px;
-  }
-
-  .cr-select-group {
+  .route-duration-input {
     flex-direction: column;
-    gap: 20px;
   }
 
-  .cr-save-btn,
-  .cr-add-btn,
-  .cr-save-route-btn,
-  .cr-previous-btn,
-  .cr-save-preview-btn {
+  .route-form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .route-primary-btn,
+  .route-secondary-btn,
+  .route-outline-btn {
     width: 100%;
-    text-align: center;
+  }
+
+  .route-multi-currency-container {
+    grid-template-columns: 1fr;
+  }
+
+  .route-photo-gallery {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .route-photo-cells {
+    width: 100%;
+  }
+
+  .route-photo-cell {
+    width: 150px;
+    height: 100px;
   }
 }

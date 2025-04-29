@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логин и безопасность | TripTipp</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/language-switcher.css">
+    <link rel="stylesheet" href="styles/login-security.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="inner-container">
+              <div class="header-content">
+                <div class="logo">
+                  <a href="europe.html">
+                    <img src="logo2.png" alt="Travel Logo">
+                  </a>
+                </div>
+                
+                <div class="header-controls">
+                  <!-- Language Switcher Trigger -->
+                  <div class="language-switcher">
+                    <button class="language-button" id="languageButton">
+                      <span class="language-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <line x1="2" y1="12" x2="22" y2="12"></line>
+                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                      </span>
+                      <span class="language-code">RU</span>
+                    </button>
+                    <!-- Языковое меню будет загружено динамически -->
+                  </div>
+                  
+                  <!-- User Menu -->
+                  <div class="user-section">
+                    <button class="user-button" id="userButton">
+                      <div class="hamburger-icon">
+                        <div class="hamburger-line"></div>
+                        <div class="hamburger-line"></div>
+                        <div class="hamburger-line"></div>
+                      </div>
+                      <div class="user-avatar">
+                        <!-- Red circle avatar placeholder -->
+                      </div>
+                    </button>
+                    
+                    <div class="user-menu" id="userMenu">
+                      <!-- Меню пользователя будет загружено из user-menu.js -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
+        <div id="header-placeholder"></div>
+
+        <main class="main-content">
+            <div class="security-container">
+                <div class="page-header">
+                    <h1>Логин и безопасность</h1>
+                </div>
+                <p class="page-description">Управляйте настройками безопасности вашего аккаунта</p>
+
+                <div class="security-sections">
+                    <!-- Account Information Section -->
+                    <div class="security-section">
+                        <div class="section-header">
+                            <h2>Информация аккаунта</h2>
+                            <div class="section-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="section-content">
+                            <div class="info-row">
+                                <div class="info-label">Имя пользователя</div>
+                                <div class="info-value" id="username"></div>
+                                <button class="edit-button">Изменить</button>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Email</div>
+                                <div class="info-value" id="email"></div>
+                                <button class="edit-button">Изменить</button>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Телефон</div>
+                                <div class="info-value" id="phone"></div>
+                                <button class="edit-button">Изменить</button>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Дата регистрации</div>
+                                <div class="info-value" id="accountCreated"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Password Section -->
+                    <div class="security-section">
+                        <div class="section-header">
+                            <h2>Пароль</h2>
+                            <div class="section-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="section-content">
+                            <div class="info-row">
+                                <div class="info-label">Пароль</div>
+                                <div class="info-value">••••••••</div>
+                                <button class="edit-button" id="changePasswordBtn">Изменить</button>
+                            </div>
+                            <div class="password-change-form" id="passwordChangeForm">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="currentPassword">Текущий пароль</label>
+                                        <input type="password" id="currentPassword" class="form-input" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newPassword">Новый пароль</label>
+                                        <input type="password" id="newPassword" class="form-input" required>
+                                        <div class="password-strength">
+                                            <div class="strength-bar">
+                                                <div class="strength-indicator"></div>
+                                            </div>
+                                            <div class="strength-text">Надежность пароля</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmPassword">Подтвердите новый пароль</label>
+                                        <input type="password" id="confirmPassword" class="form-input" required>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button class="cancel-button">Отмена</button>
+                                        <button class="save-button">Сохранить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Two-Factor Authentication Section -->
+                    <div class="security-section">
+                        <div class="section-header">
+                            <h2>Двухфакторная аутентификация</h2>
+                            <div class="section-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                        </div>
+                        <div class="section-content">
+                            <div class="section-description">
+                                Двухфакторная аутентификация добавляет дополнительный уровень безопасности, требуя второй способ подтверждения вашей личности при входе в аккаунт.
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Статус</div>
+                                <div class="info-value" id="twoFactorStatus"></div>
+                                <button class="action-button" id="toggleTwoFactorBtn">Включить</button>
+                            </div>
+                            <div class="two-factor-methods" id="twoFactorMethods" style="display: none;">
+                                <h3>Выберите метод аутентификации</h3>
+                                <div class="method-option">
+                                    <input type="radio" id="authApp" name="twoFactorMethod" value="app">
+                                    <label for="authApp">
+                                        <span class="method-name">Приложение-аутентификатор</span>
+                                        <span class="method-description">Используйте Google Authenticator, Microsoft Authenticator или другое приложение для генерации кодов.</span>
+                                    </label>
+                                </div>
+                                <div class="method-option">
+                                    <input type="radio" id="authSms" name="twoFactorMethod" value="sms">
+                                    <label for="authSms">
+                                        <span class="method-name">SMS</span>
+                                        <span class="method-description">Получайте коды подтверждения по SMS на ваш телефон.</span>
+                                    </label>
+                                </div>
+                                <div class="method-option">
+                                    <input type="radio" id="authEmail" name="twoFactorMethod" value="email">
+                                    <label for="authEmail">
+                                        <span class="method-name">Email</span>
+                                        <span class="method-description">Получайте коды подтверждения на ваш email.</span>
+                                    </label>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="save-button" id="saveTwoFactorMethod">Сохранить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backup Email Section -->
+                    <div class="security-section">
+                        <div class="section-header">
+                            <h2>Резервный email</h2>
+                            <div class="section-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="section-content">
+                            <div class="section-description">
+                                Резервный email используется для восстановления доступа к аккаунту в случае потери доступа к основному email.
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Резервный email</div>
+                                <div class="info-value" id="backupEmail">Не указан</div>
+                                <button class="edit-button" id="changeBackupEmailBtn">Изменить</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Notifications Section -->
+                    <div class="security-section">
+                        <div class="section-header">
+                            <h2>Уведомления безопасности</h2>
+                            <div class="section-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                        </div>
+                        <div class="section-content">
+                            <div class="section-description">
+                                Настройте уведомления о событиях безопасности вашего аккаунта.
+                            </div>
+                            <div class="notification-option">
+                                <div class="option-details">
+                                    <div class="option-name">Уведомления о входе</div>
+                                    <div class="option-description">Получайте уведомления при входе в ваш аккаунт с нового устройства или местоположения.</div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="loginAlerts">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div class="option-details">
+                                    <div class="option-name">Предупреждения безопасности</div>
+                                    <div class="option-description">Получайте уведомления о подозрительной активности или потенциальных угрозах безопасности.</div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="securityAlerts">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-option">
+                                <div class="option-details">
+                                    <div class="option-name">Изменения аккаунта</div>
+                                    <div class="option-description">Получайте уведомления при изменении важных настроек вашего аккаунта.</div>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="accountChanges">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer will be loaded from base.html -->
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <script src="scripts/base.js"></script>
+    <script type="module" src="scripts/login-security.js"></script>
+</body>
+</html>

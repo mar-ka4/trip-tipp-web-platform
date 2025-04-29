@@ -1,0 +1,179 @@
+/* Стили для переключателя языка */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Кнопка языка */
+  .language-switcher {
+    position: relative;
+  }
+  
+  .language-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .language-button:hover {
+    background: #2e323a;
+  }
+  
+  .language-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .language-code {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  /* Выпадающее меню языков */
+  .language-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 250px;
+    background-color: #2e323a;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    display: none;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .language-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Поле поиска языка - зафиксировано на месте */
+  .language-search {
+    margin-bottom: 15px;
+    position: sticky;
+    top: 0;
+    background-color: #2e323a;
+    z-index: 2;
+    padding-bottom: 5px;
+  }
+  
+  .language-search input {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #24272b;
+    border: 1px solid #4a4a4a;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .language-search input:focus {
+    outline: none;
+    border-color: #747bf1;
+    box-shadow: 0 0 0 2px rgba(78, 70, 193, 0.2);
+  }
+  
+  .language-search input::placeholder {
+    color: #b0b0b0;
+  }
+  
+  /* Список языков - с фиксированной высотой и скроллом */
+  .language-list {
+    max-height: 240px; /* Фиксированная высота для скролла */
+    overflow-y: auto;
+    padding-right: 5px; /* Отступ для скроллбара */
+    position: relative;
+  }
+  
+  .language-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .language-item:hover {
+    background-color: #978bff42;
+  }
+  
+  .language-item.active {
+    background-color: #978bff5d;
+  }
+  
+  .language-item-code {
+    width: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #b0b0b0;
+  }
+  
+  .language-item-name {
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  /* Стилизация скроллбара - делаем его тонким и ненавязчивым */
+  .language-list::-webkit-scrollbar {
+    width: 3px; /* Очень тонкий скроллбар */
+  }
+  
+  .language-list::-webkit-scrollbar-track {
+    background: transparent; /* Прозрачный трек */
+  }
+  
+  .language-list::-webkit-scrollbar-thumb {
+    background-color: rgba(138, 127, 245, 0.2); /* Полупрозрачный ползунок */
+    border-radius: 10px;
+  }
+  
+  .language-list::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(138, 127, 245, 0.2); /* Более яркий при наведении */
+  }
+  
+  /* Скроллбар для Firefox */
+  .language-list {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(138, 127, 245, 0.2) transparent;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .language-menu {
+      width: 220px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .language-button {
+      padding: 6px 8px;
+    }
+  
+    .language-menu {
+      width: 200px;
+      right: -20px;
+    }
+  
+    .language-list {
+      max-height: 200px; /* Немного уменьшаем для мобильных */
+    }
+  }
+  
