@@ -1,0 +1,55 @@
+/* Стили для контейнера подсказок */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #141516;
+    border: 1px solid #2a2a2a;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none;
+  }
+  
+  /* Стили для элементов подсказок */
+  .suggestion-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #e0e0e0;
+    transition: background-color 0.2s ease;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #2a2a2a;
+    color: #747bf1;
+  }
+  
+  /* Стили для скроллбара в подсказках */
+  .search-suggestions::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .search-suggestions::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 0 0 8px 0;
+  }
+  
+  .search-suggestions::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+    border-radius: 3px;
+  }
+  
+  .search-suggestions::-webkit-scrollbar-thumb:hover {
+    background: #4a4a4a;
+  }
+  
+  /* Обеспечиваем правильное позиционирование контейнера поиска */
+  .search-container {
+    position: relative;
+    flex: 1;
+  }
+  

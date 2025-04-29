@@ -1,4 +1,5 @@
 import routesData from "./routesData.js"
+import usersData from "./usersData.js"
 
 // Получаем индекс маршрута из URL
 const urlParams = new URLSearchParams(window.location.search)
@@ -15,6 +16,18 @@ if (!route) {
 // Заполняем заголовок
 document.getElementById("route-name").textContent = route.name
 document.getElementById("route-location").textContent = route.location
+
+// Находим автора маршрута и устанавливаем его аватар
+if (route.author) {
+  const creator = usersData.find(user => user.nickname === route.author)
+  if (creator) {
+    const creatorAvatar = document.querySelector('.creator-avatar img')
+    if (creatorAvatar) {
+      creatorAvatar.src = creator.avatar || "img/default-avatar.png"
+      creatorAvatar.alt = `${creator.nickname}'s Avatar`
+    }
+  }
+}
 
 // Заполняем галерею (до 4 изображений: 2 больших, 2 маленьких)
 const gallery = document.getElementById("route-gallery")
