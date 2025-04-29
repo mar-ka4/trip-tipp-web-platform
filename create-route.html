@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Explorer - Create Route</title>
-  <link rel="stylesheet" href="styles/main-styles.css">
-  <link rel="stylesheet" href="styles/create-route.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Route</title>
+    <link rel="stylesheet" href="styles/create-route.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/language-switcher.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <!-- Full-width header with fixed position -->
   <header>
     <div class="inner-container">
       <div class="header-content">
         <div class="logo">
           <a href="europe.html">
-            <img src="logo.png" alt="Travel Logo">
+            <img src="logo2.png" alt="Travel Logo">
           </a>
         </div>
         
@@ -23,7 +23,7 @@
           <div class="search-container">
             <input type="text" class="search-bar" placeholder="Search destinations...">
             <button class="search-button">
-              <span class="icon-search">🔍</span>
+              <span class="icon-search"></span>
             </button>
           </div>
           
@@ -33,197 +33,365 @@
           </div>
         </div>
         
-        <div class="user-section">
-          <button class="user-button" id="userButton">
-            <div class="hamburger-icon">
-              <div class="hamburger-line"></div>
-              <div class="hamburger-line"></div>
-              <div class="hamburger-line"></div>
-            </div>
-            <div class="user-avatar">
-              <!-- Red circle avatar placeholder -->
-            </div>
-          </button>
+        <div class="header-controls">
+          <!-- Language Switcher Trigger -->
+          <div class="language-switcher">
+            <button class="language-button" id="languageButton">
+              <span class="language-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </span>
+              <span class="language-code">RU</span>
+            </button>
+            <!-- Языковое меню будет загружено динамически -->
+          </div>
           
-          <div class="user-menu" id="userMenu">
-            <a class="menu-item" href="profile.html">Profile</a>
-            <div class="menu-item">Login and security</div>
-            <div class="menu-item">Settings</div>
-            
-            <div class="menu-divider"></div>
-            
-            <button class="create-route-btn">
-              <span class="icon-plus">+</span>
-              <span>Create a route</span>
+          <!-- User Menu -->
+          <div class="user-section">
+            <button class="user-button" id="userButton">
+              <div class="hamburger-icon">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+              </div>
+              <div class="user-avatar">
+                <!-- Red circle avatar placeholder -->
+              </div>
             </button>
             
-            <div class="menu-item">Your routes</div>
-            <div class="menu-item">Analytics</div>
-            <div class="menu-item">Payments</div>
-            <div class="menu-item">Sign out</div>
-            
-            <div class="social-links">
-              <div class="social-link"></div>
-              <div class="social-link"></div>
-              <div class="social-link"></div>
-              <div class="social-link"></div>
+            <div class="user-menu" id="userMenu">
+              <!-- Меню пользователя будет загружено из user-menu.js -->
             </div>
           </div>
         </div>
       </div>
     </div>
   </header>
-  
-  <!-- Main content with scrollable area -->
-  <div class="main-content">
-    <div class="inner-container">
-      <div class="cr-page-header">
-        <h1>Create Route</h1>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="page-header">
+        <div class="header-container">
+          <h1>Create New Route</h1>
+          <div class="route-progress-steps">
+            <div class="route-step active">
+              <div class="route-step-number">1</div>
+              <div class="route-step-label">Information</div>
+            </div>
+            <div class="route-step-line"></div>
+            <div class="route-step">
+              <div class="route-step-number">2</div>
+              <div class="route-step-label">Points</div>
+            </div>
+            <div class="route-step-line"></div>
+            <div class="route-step">
+              <div class="route-step-number">3</div>
+              <div class="route-step-label">Coordinates</div>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <!-- Основная область -->
-      <div class="cr-content-wrapper">
-        <!-- Шаг 1: Описание маршрута -->
-        <h2>Step 1: Fill out the form to describe the route</h2>
-        <p class="cr-hint">Hint: Fields marked in purple will be displayed on the main page card.</p>
 
-        <form id="cr-route-form">
-          <!-- Название маршрута -->
-          <div class="cr-form-group">
-            <label for="cr-route-name">Write the name of the route</label>
-            <input type="text" id="cr-route-name" name="cr-route-name" placeholder="Example: 7-day Iceland route" required>
-          </div>
-
-          <!-- Загрузка фото -->
-          <div class="cr-form-group">
-            <label>Add photos</label>
-            <div class="cr-photo-upload">
-              <div class="cr-photo-placeholder cr-preview-photo">
-                <i class="fas fa-camera"></i>
-                <button type="button" class="cr-remove-photo-btn" style="display: none;">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-              <div class="cr-photo-placeholder">
-                <i class="fas fa-camera"></i>
-                <button type="button" class="cr-remove-photo-btn" style="display: none;">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-              <div class="cr-photo-placeholder">
-                <i class="fas fa-camera"></i>
-                <button type="button" class="cr-remove-photo-btn" style="display: none;">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-              <div class="cr-photo-placeholder">
-                <i class="fas fa-camera"></i>
-                <button type="button" class="cr-remove-photo-btn" style="display: none;">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-              <div class="cr-photo-placeholder">
-                <i class="fas fa-camera"></i>
-                <button type="button" class="cr-remove-photo-btn" style="display: none;">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
+      <form id="route-info-form">
+        <!-- Step 1: Route Info -->
+        <div class="route-step-content" id="step1">
+          <!-- Card 1: Basic Information -->
+          <div class="route-card">
+            <div class="route-card-header">
+              <h2>Basic Information</h2>
+            </div>
+            
+            <div class="route-form-group">
+              <label class="route-label" for="route-name">Route Name <span class="route-required">*</span></label>
+              <input class="route-input" type="text" id="route-name" placeholder="Example: 7-day Iceland route" required>
+            </div>
+            
+            <div class="route-form-group">
+              <label class="route-label" for="location-search">Search Location</label>
+              <div class="route-search-input">
+                <i class="fas fa-search"></i>
+                <input class="route-input" type="text" id="location-search" placeholder="Search for locations...">
               </div>
             </div>
-            <div class="cr-add-photo-wrapper">
-              <button type="button" class="cr-add-photo-btn">Add Photo</button>
-              <input type="file" id="cr-photo-upload-input" accept="image/png,image/jpeg" multiple style="display: none;">
+            
+            <div class="route-form-group">
+              <label class="route-label" for="description">Route Description <span class="route-required">*</span></label>
+              <textarea class="route-textarea" id="description" rows="4" placeholder="Describe in detail what your route includes" required></textarea>
+            </div>
+            
+            <div class="route-form-group">
+              <label class="route-label">Add Photos (up to 5)</label>
+              <div class="route-photo-gallery">
+                <button type="button" class="route-add-photo-circle" id="add-photo-btn">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <div class="route-photo-cells">
+                  <div class="route-photo-cell empty"></div>
+                  <div class="route-photo-cell empty"></div>
+                  <div class="route-photo-cell empty"></div>
+                  <div class="route-photo-cell empty"></div>
+                  <div class="route-photo-cell empty"></div>
+                </div>
+                <input type="file" id="photo-upload" accept="image/*" multiple style="display: none;">
+              </div>
             </div>
           </div>
 
-          <!-- Выпадающие списки -->
-          <div class="cr-form-group cr-select-group">
-            <div class="cr-select-wrapper">
-              <label for="cr-short-content">Short content</label>
-              <select id="cr-short-content" name="cr-short-content">
-                <option value="" disabled selected>Type not selected</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
+          <!-- Card 2: Route Details -->
+          <div class="route-card">
+            <div class="route-card-header">
+              <h2>Route Details</h2>
             </div>
-            <div class="cr-select-wrapper">
-              <label for="cr-difficulty">Select difficulty</label>
-              <select id="cr-difficulty" name="cr-difficulty">
-                <option value="" disabled selected>Select difficulty</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-              </select>
+            
+            <div class="route-form-group">
+              <label class="route-label">Difficulty</label>
+              <div class="route-button-group">
+                <button type="button" class="route-toggle-btn route-difficulty-btn" data-value="easy">Easy</button>
+                <button type="button" class="route-toggle-btn route-difficulty-btn" data-value="medium">Medium</button>
+                <button type="button" class="route-toggle-btn route-difficulty-btn" data-value="hard">Hard</button>
+              </div>
+              <input type="hidden" id="difficulty-value" value="">
+            </div>
+
+            <div class="route-form-group">
+              <label class="route-label">Duration</label>
+              <div class="route-duration-input">
+                <input class="route-input route-duration-number" type="number" id="duration-value" min="1" placeholder="Value">
+                <div class="route-button-group">
+                  <button type="button" class="route-toggle-btn" data-value="hours">
+                    <i class="far fa-clock"></i> Hours
+                  </button>
+                  <button type="button" class="route-toggle-btn" data-value="days">
+                    <i class="far fa-calendar"></i> Days
+                  </button>
+                </div>
+              </div>
+              <div class="route-auto-duration">
+                <label class="route-switch">
+                  <input type="checkbox" id="auto-duration-toggle">
+                  <span class="route-switch-slider"></span>
+                </label>
+                <span class="route-auto-duration-label">Set automatically based on points</span>
+              </div>
+              <input type="hidden" id="duration-unit-value" value="">
+            </div>
+
+            <div class="route-form-group">
+              <label class="route-label">Route Type</label>
+              <div class="route-type-buttons">
+                <button type="button" class="route-type-btn" data-value="hiking">
+                  <i class="fas fa-hiking"></i>
+                  <span>Hiking</span>
+                </button>
+                <button type="button" class="route-type-btn" data-value="on-foot">
+                  <i class="fas fa-walking"></i>
+                  <span>On Foot</span>
+                </button>
+                <button type="button" class="route-type-btn" data-value="cycling">
+                  <i class="fas fa-bicycle"></i>
+                  <span>Cycling</span>
+                </button>
+                <button type="button" class="route-type-btn" data-value="road-trip">
+                  <i class="fas fa-car"></i>
+                  <span>Road Trip</span>
+                </button>
+                <button type="button" class="route-type-btn" data-value="motorhome">
+                  <i class="fas fa-caravan"></i>
+                  <span>Motorhome</span>
+                </button>
+                <button type="button" class="route-type-btn" data-value="guidebook">
+                  <i class="fas fa-book"></i>
+                  <span>Guidebook</span>
+                </button>
+              </div>
+              <input type="hidden" id="route-type-value" value="">
             </div>
           </div>
 
-          <div class="cr-form-group cr-select-group">
-            <div class="cr-select-wrapper">
-              <label for="cr-duration">Duration</label>
-              <select id="cr-duration" name="cr-duration">
-                <option value="" disabled selected>Select options</option>
-                <option value="1-3">1-3 days</option>
-                <option value="4-7">4-7 days</option>
-                <option value="7+">7+ days</option>
-              </select>
+          <!-- Card 3: Pricing -->
+          <div class="route-card">
+            <div class="route-card-header">
+              <h2>Pricing</h2>
             </div>
-            <div class="cr-select-wrapper">
-              <label for="cr-type">Type</label>
-              <select id="cr-type" name="cr-type">
-                <option value="" disabled selected>Type not selected</option>
-                <option value="hiking">Hiking</option>
-                <option value="cycling">Cycling</option>
-                <option value="road-trip">Road Trip</option>
-              </select>
+            
+            <div class="route-multi-currency-container">
+              <div class="route-form-group">
+                <label class="route-label" for="price-usd">Price in USD ($)</label>
+                <div class="route-currency-input">
+                  <span class="currency-symbol">$</span>
+                  <input class="route-input" type="number" id="price-usd" min="0" step="0.01" placeholder="0.00">
+                </div>
+              </div>
+              
+              <div class="route-form-group">
+                <label class="route-label" for="price-eur">Price in EUR (€)</label>
+                <div class="route-currency-input">
+                  <span class="currency-symbol">€</span>
+                  <input class="route-input" type="number" id="price-eur" min="0" step="0.01" placeholder="0.00">
+                </div>
+              </div>
+              
+              <div class="route-form-group">
+                <label class="route-label" for="price-cny">Price in CNY (¥)</label>
+                <div class="route-currency-input">
+                  <span class="currency-symbol">¥</span>
+                  <input class="route-input" type="number" id="price-cny" min="0" step="0.01" placeholder="0.00">
+                </div>
+              </div>
+              
+              <div class="route-form-group">
+                <label class="route-label" for="price-uah">Price in UAH (₴)</label>
+                <div class="route-currency-input">
+                  <span class="currency-symbol">₴</span>
+                  <input class="route-input" type="number" id="price-uah" min="0" step="0.01" placeholder="0.00">
+                </div>
+              </div>
+              
+              <div class="route-form-group">
+                <label class="route-label" for="price-rub">Price in RUB (₽)</label>
+                <div class="route-currency-input">
+                  <span class="currency-symbol">₽</span>
+                  <input class="route-input" type="number" id="price-rub" min="0" step="0.01" placeholder="0.00">
+                </div>
+              </div>
+            </div>
+            
+            <div class="route-form-group">
+              <label class="route-label">Available by Subscription</label>
+              <div class="route-subscription-toggle">
+                <label class="route-switch">
+                  <input type="checkbox" id="subscription-toggle">
+                  <span class="route-switch-slider"></span>
+                </label>
+                <span class="route-subscription-label">Require subscription to access</span>
+              </div>
             </div>
           </div>
 
-          <!-- Описание маршрута -->
-          <div class="cr-form-group">
-            <label for="cr-description">Write a description of the route</label>
-            <textarea id="cr-description" name="cr-description" placeholder="Describe in detail what your route includes" rows="5" required></textarea>
+          <div class="route-form-actions">
+            <button type="submit" class="route-primary-btn">Save and Continue</button>
           </div>
-
-          <!-- Кнопка отправки -->
-          <button type="submit" class="cr-save-btn">Save and continue</button>
-        </form>
-
-        <!-- Шаг 2: Точки маршрута -->
-        <div class="cr-route-points">
-          <h2>Step 2: Fill out the route cards</h2>
-          <div id="cr-points-container">
-            <!-- Точки будут добавляться динамически через JavaScript -->
-          </div>
-          <button id="cr-add-point-btn" class="cr-add-btn">Add Point</button>
-          <button id="cr-save-route-btn" class="cr-save-route-btn" disabled>Save and continue</button>
         </div>
 
-        <!-- Шаг 3: Указание координат -->
-        <div class="cr-route-coordinates" style="display: none;">
-          <h2>Step 3: Set coordinates for each point</h2>
-          <div class="cr-coordinates-content">
-            <div class="cr-points-list">
-              <div class="cr-search-bar">
-                <input type="text" id="cr-map-search" placeholder="Search on map">
-                <i class="fas fa-search"></i>
-              </div>
-              <div id="cr-coordinates-points-container">
-                <!-- Карточки точек с полем для координат будут добавляться динамически -->
-              </div>
-              <div class="cr-coordinates-footer">
-                <button id="cr-previous-step-btn" class="cr-previous-btn">Previous</button>
-                <button id="cr-save-preview-btn" class="cr-save-preview-btn">Save and preview route</button>
-              </div>
+        <!-- Step 2: Points -->
+        <div class="route-step-content hidden" id="step2">
+          <div class="route-card">
+            <div class="route-card-header">
+              <h2>Route Points</h2>
+              <span class="route-hint">Add at least 5 points to your route</span>
             </div>
-            <div class="cr-map-container">
-              <div id="cr-map-placeholder">Map Placeholder (Integrate with Leaflet/Google Maps)</div>
+
+            <div id="points-container"></div>
+
+            <button type="button" class="route-outline-btn" id="add-point-btn" style="margin-top: 1.5rem;">
+              <i class="fas fa-plus" style="margin-right: 0.5rem;"></i> Add Point
+            </button>
+
+            <div class="route-form-actions">
+              <button type="button" class="route-secondary-btn" id="previous-step1-btn">Back</button>
+              <div class="route-spacer"></div>
+              <button type="button" class="route-primary-btn" id="save-points-btn">Continue</button>
             </div>
           </div>
+        </div>
+
+        <!-- Step 3: Coordinates -->
+        <div class="route-step-content hidden" id="step3">
+          <div class="route-card">
+            <div class="route-card-header">
+              <h2>Confirm Coordinates</h2>
+            </div>
+
+            <div class="route-coordinates-layout">
+              <div class="route-map-container">
+                <div class="route-search-container route-map-search-container">
+                  <i class="fas fa-search"></i>
+                  <input type="text" placeholder="Search on the map">
+                </div>
+                <div class="route-map-placeholder">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div>Map will be displayed here</div>
+                  <div class="route-map-point-name" id="current-point-name"></div>
+                </div>
+              </div>
+              <div class="route-points-sidebar">
+                <!-- Removed search container from here -->
+                <div class="route-points-list" id="coordinates-points-container">
+                  <!-- Coordinate cards will be added here -->
+                </div>
+              </div>
+            </div>
+
+            <div class="route-form-actions" style="margin-top: 1.5rem;">
+              <button type="button" class="route-secondary-btn" id="previous-step2-btn">Back</button>
+              <div class="route-spacer"></div>
+              <button type="button" class="route-primary-btn" id="save-preview-btn">Save & Preview</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Templates -->
+  <template id="point-card-template">
+    <div class="route-point-card">
+      <div class="route-point-header">
+        <h3>Point <span class="point-number"></span></h3>
+        <button type="button" class="route-remove-point-btn">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+      <div class="route-form-group">
+        <label class="route-label">Point Name <span class="route-required">*</span></label>
+        <input class="route-input point-name" type="text" required>
+      </div>
+      <div class="route-form-group">
+        <label class="route-label">Description <span class="route-required">*</span></label>
+        <textarea class="route-textarea point-description" rows="3" required></textarea>
+      </div>
+      <div class="route-form-group">
+        <label class="route-label">Images (optional, max 3)</label>
+        <div class="route-point-images-container">
+          <div class="route-point-images-preview"></div>
+          <button type="button" class="route-add-point-image-btn add-point-image-btn">
+            <i class="fas fa-plus"></i>
+          </button>
+          <input type="file" class="point-image-upload" accept="image/*" multiple style="display: none;">
         </div>
       </div>
     </div>
-  </div>
+  </template>
 
-  <script src="scripts/user-menu.js"></script>
+  <template id="coordinate-card-template">
+    <div class="route-coordinate-card">
+      <div class="route-coordinate-card-header">
+        <div class="route-point-image-container">
+          <div class="route-point-image-placeholder">
+            <i class="fas fa-image"></i>
+          </div>
+        </div>
+        <div class="route-point-info">
+          <div class="route-point-label">Point <span class="coordinate-point-number"></span></div>
+          <div class="route-point-name-label"></div>
+        </div>
+      </div>
+      <div class="route-coordinate-input-group">
+        <input class="route-coordinate-input" type="text" placeholder="Enter coordinates (e.g. 51.5074, -0.1278)">
+        <div class="route-coordinate-actions">
+          <button class="route-reset-btn">Reset</button>
+          <button class="route-confirm-btn">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
   <script src="scripts/create-route.js"></script>
+  <script src="scripts/currency-converter.js"></script>
+  <script src="scripts/user-menu.js"></script>
+  <script src="scripts/language-switcher.js"></script>
 </body>
 </html>

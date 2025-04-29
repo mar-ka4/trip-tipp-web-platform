@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TripTips - Просмотр маршрута</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/route-map.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="route-map-container">
+    <!-- Боковая панель с точками маршрута -->
+    <div class="sidebar">
+      <!-- Шапка боковой панели -->
+      <div class="sidebar-header">
+        <div class="header-content">
+          <a href="europe.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+          <h1 class="route-title">Исторические достопримечательности Берлина</h1>
+        </div>
+      </div>
+
+      <!-- Список точек маршрута -->
+      <div class="route-points-list">
+        <!-- Точка маршрута 1 -->
+        <div class="route-point-card active">
+          <div class="point-number">1</div>
+          <div class="point-content">
+            <div class="point-gallery">
+              <div class="gallery-container">
+                <img src="img/berlin-1/b1.png" alt="Рейхстаг" class="gallery-image active">
+                <img src="img/berlin-1/b2.png" alt="Рейхстаг вид сбоку" class="gallery-image">
+                <img src="img/berlin-1/b3.png" alt="Рейхстаг интерьер" class="gallery-image">
+              </div>
+              <button class="gallery-nav gallery-prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="gallery-nav gallery-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="point-details">
+              <h3 class="point-title">Рейхстаг</h3>
+              <div class="point-description-container">
+                <p class="point-description collapsed">Историческое здание в Берлине, где заседает бундестаг — немецкий парламент. Здание было построено в 1894 году и стало символом объединённой Германии. Это одна из самых посещаемых достопримечательностей Берлина. Здание имеет огромное политическое и историческое значение для всей Германии. С его смотровой площадки открывается великолепный вид на город. Купол здания, спроектированный Норманом Фостером, является символом прозрачности современной немецкой демократии.</p>
+              </div>
+              <button class="expand-button">Показать больше</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Точка маршрута 2 -->
+        <div class="route-point-card">
+          <div class="point-number">2</div>
+          <div class="point-content">
+            <div class="point-gallery">
+              <div class="gallery-container">
+                <img src="img/berlin-1/b2.png" alt="Бранденбургские ворота" class="gallery-image active">
+                <img src="img/berlin-1/b3.png" alt="Бранденбургские ворота ночью" class="gallery-image">
+                <img src="img/berlin-1/b4.png" alt="Бранденбургские ворота вблизи" class="gallery-image">
+              </div>
+              <button class="gallery-nav gallery-prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="gallery-nav gallery-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="point-details">
+              <h3 class="point-title">Бранденбургские ворота</h3>
+              <div class="point-description-container">
+                <p class="point-description collapsed">Знаменитый архитектурный памятник в центре Берлина, символ города. Ворота были построены в 1791 году как символ мира. Они являются одним из самых узнаваемых символов Германии и важным историческим местом. Бранденбургские ворота часто становятся местом проведения различных мероприятий и праздников. Их изображение можно увидеть на многих открытках и сувенирах, посвященных Берлину.</p>
+              </div>
+              <button class="expand-button">Показать больше</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Точка маршрута 3 -->
+        <div class="route-point-card">
+          <div class="point-number">3</div>
+          <div class="point-content">
+            <div class="point-gallery">
+              <div class="gallery-container">
+                <img src="img/berlin-1/b3.png" alt="Берлинская стена" class="gallery-image active">
+                <img src="img/berlin-2/b1.png" alt="Фрагмент Берлинской стены" class="gallery-image">
+                <img src="img/berlin-2/b2.png" alt="Граффити на Берлинской стене" class="gallery-image">
+              </div>
+              <button class="gallery-nav gallery-prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="gallery-nav gallery-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="point-details">
+              <h3 class="point-title">Берлинская стена</h3>
+              <div class="point-description-container">
+                <p class="point-description collapsed">Инженерно-оборудованная и укреплённая государственная граница Германской Демократической Республики, существовавшая с 13 августа 1961 года по 9 ноября 1989 года. Стена стала символом разделения Германии и холодной войны. После падения стены она была частично разрушена, но некоторые участки остались как памятники истории. Сегодня Берлинская стена является популярным туристическим местом.</p>
+              </div>
+              <button class="expand-button">Показать больше</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Точка маршрута 4 -->
+        <div class="route-point-card">
+          <div class="point-number">4</div>
+          <div class="point-content">
+            <div class="point-gallery">
+              <div class="gallery-container">
+                <img src="img/berlin-1/b4.png" alt="Мемориал Холокоста" class="gallery-image active">
+                <img src="img/berlin-2/b3.png" alt="Мемориал Холокоста вид сверху" class="gallery-image">
+                <img src="img/berlin-2/b4.png" alt="Мемориал Холокоста детали" class="gallery-image">
+              </div>
+              <button class="gallery-nav gallery-prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="gallery-nav gallery-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="point-details">
+              <h3 class="point-title">Мемориал Холокоста</h3>
+              <div class="point-description-container">
+                <p class="point-description collapsed">Мемориал жертвам Холокоста в центре Берлина, недалеко от Бранденбургских ворот. Состоит из 2711 бетонных плит разной высоты. Мемориал является местом памяти и скорби о миллионах жертв Холокоста. Его необычная архитектура вызывает разные чувства и размышления. Посещение мемориала - важный опыт для каждого, кто интересуется историей Второй мировой войны.</p>
+              </div>
+              <button class="expand-button">Показать больше</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Дополнительные точки маршрута -->
+        <div class="route-point-card">
+          <div class="point-number">5</div>
+          <div class="point-content">
+            <div class="point-gallery">
+              <div class="gallery-container">
+                <img src="img/berlin-2/b1.png" alt="Музейный остров" class="gallery-image active">
+                <img src="img/berlin-1/b1.png" alt="Музей Боде" class="gallery-image">
+                <img src="img/berlin-1/b2.png" alt="Пергамский музей" class="gallery-image">
+              </div>
+              <button class="gallery-nav gallery-prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="gallery-nav gallery-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="point-details">
+              <h3 class="point-title">Музейный остров</h3>
+              <div class="point-description-container">
+                <p class="point-description collapsed">Северная часть острова Шпрееинзель на реке Шпрее в центре Берлина, где расположены пять всемирно известных музеев. Музейный остров является объектом Всемирного наследия ЮНЕСКО. Здесь можно увидеть уникальные коллекции искусства и артефактов разных эпох. Каждый музей на острове имеет свою специализацию и предлагает посетителям увлекательное путешествие в мир культуры и истории.</p>
+              </div>
+              <button class="expand-button">Показать больше</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="route-point-card">
+          <div class="point-number">6</div>
+          <div class="point-content">
+            <div class="point-gallery">
+              <div class="gallery-container">
+                <img src="img/berlin-2/b2.png" alt="Александерплац" class="gallery-image active">
+                <img src="img/berlin-1/b3.png" alt="Телебашня на Александерплац" class="gallery-image">
+                <img src="img/berlin-1/b4.png" alt="Фонтан Дружбы народов" class="gallery-image">
+              </div>
+              <button class="gallery-nav gallery-prev"><i class="fas fa-chevron-left"></i></button>
+              <button class="gallery-nav gallery-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="point-details">
+              <h3 class="point-title">Александерплац</h3>
+              <div class="point-description-container">
+                <p class="point-description collapsed">Центральная площадь Берлина, названная в честь российского императора Александра I. Одно из самых посещаемых мест города. Александерплац является важным транспортным узлом и местом проведения различных мероприятий. Здесь расположены многочисленные магазины, рестораны и кафе. Площадь также известна своей архитектурой, включая знаменитую Берлинскую телебашню.</p>
+              </div>
+              <button class="expand-button">Показать больше</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Основная область с картой -->
+    <div class="map-container">
+      <!-- Аватар автора в правом верхнем углу карты -->
+      <div class="author-avatar">
+        <img src="img/zaglushki/pepe.jpg" alt="Автор маршрута">
+      </div>
+      
+      <!-- Заглушка для карты -->
+      <div class="map-placeholder">
+        <div class="map-overlay">
+          <div class="map-message">
+            <i class="fas fa-map-marked-alt"></i>
+            <p>Здесь будет интерактивная карта маршрута</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Панель настроек карты -->
+      <div class="map-settings">
+        <div class="settings-group">
+          <button class="settings-button" title="Тема карты">
+            <i class="fas fa-adjust"></i>
+          </button>
+          <div class="settings-dropdown">
+            <div class="dropdown-option">
+              <input type="radio" id="theme-light" name="map-theme" value="light" checked>
+              <label for="theme-light">Светлая</label>
+            </div>
+            <div class="dropdown-option">
+              <input type="radio" id="theme-dark" name="map-theme" value="dark">
+              <label for="theme-dark">Темная</label>
+            </div>
+            <div class="dropdown-option">
+              <input type="radio" id="theme-satellite" name="map-theme" value="satellite">
+              <label for="theme-satellite">Спутник</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <button class="settings-button" title="Язык">
+            <i class="fas fa-language"></i>
+          </button>
+          <div class="settings-dropdown">
+            <div class="dropdown-option">
+              <input type="radio" id="lang-ru" name="language" value="ru" checked>
+              <label for="lang-ru">Русский</label>
+            </div>
+            <div class="dropdown-option">
+              <input type="radio" id="lang-en" name="language" value="en">
+              <label for="lang-en">English</label>
+            </div>
+            <div class="dropdown-option">
+              <input type="radio" id="lang-de" name="language" value="de">
+              <label for="lang-de">Deutsch</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <button class="settings-button" title="Отображение маршрута">
+            <i class="fas fa-route"></i>
+          </button>
+          <div class="settings-dropdown">
+            <div class="dropdown-option">
+              <input type="checkbox" id="show-route" checked>
+              <label for="show-route">Показать маршрут</label>
+            </div>
+            <div class="dropdown-option">
+              <input type="checkbox" id="show-points" checked>
+              <label for="show-points">Показать точки</label>
+            </div>
+            <div class="dropdown-option">
+              <input type="checkbox" id="show-distances">
+              <label for="show-distances">Показать расстояния</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <button class="settings-button" title="Дополнительно">
+            <i class="fas fa-ellipsis-h"></i>
+          </button>
+          <div class="settings-dropdown">
+            <div class="dropdown-option">
+              <button class="dropdown-button">Скачать GPX</button>
+            </div>
+            <div class="dropdown-option">
+              <button class="dropdown-button">Поделиться</button>
+            </div>
+            <div class="dropdown-option">
+              <button class="dropdown-button">Печать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/route-map.js"></script>
+</body>
+</html>
