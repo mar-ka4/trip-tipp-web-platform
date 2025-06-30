@@ -31,10 +31,10 @@ export default [
   
   },
   {
-    nickname: "debil",
-    password: "deb456",
-    email: "debil@example.com",
-    phone: "+7 (999) 987-65-43",
+    nickname: "sanya",
+    password: "sanya",
+    email: "sanya@example.com",
+    phone: "+38 096 43 99 232",
     isVerifiedForRoutes: false,
     hasSubmittedVerificationForm: false,
     userStatus: "турист",
@@ -43,8 +43,8 @@ export default [
     visitedCountries: 8,
     createdRoutes: 2,
     connectedAccounts: {
-      google: { connected: true, email: "debil@gmail.com" },
-      facebook: { connected: true, email: "debil@facebook.com" },
+      google: { connected: true, email: "sanya@gmail.com" },
+      facebook: { connected: true, email: "sanay@facebook.com" },
       apple: { connected: false, email: "" },
     },
     twoFactorAuth: {
